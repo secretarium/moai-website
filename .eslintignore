@@ -1,0 +1,11 @@
+**/node_modules/**
+**/lib/**
+**/assets/**
+**/coverage/**
+**/reports/**
+**/.stryker-tmp/**
+**/build/**
+**/.git/**
+**/public/**
+!*.js
+!*.json
