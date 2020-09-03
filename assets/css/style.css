@@ -1,8 +1,6 @@
 /*
 NOTE:
 -----
-Please DO NOT EDIT THIS CSS, you may need to use "custom.css" file for writing your custom css.
-We may release future updates so it will overwrite this file. it's better and safer to use "custom.css".
 
 [Table of Content]
 
@@ -126,7 +124,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: "Poppins", sans-serif;
+  font-family: "Comfortaa", sans-serif;
   color: #36324a;
 }
 h1,
@@ -2525,8 +2523,7 @@ section.app-video:before {
 }
 
 .register-app-inner h2.h1 {
-  font-size: 50px;
-  font-weight: 600;
+  font-size: 45px;
   line-height: 60px;
   margin-bottom: 18px;
 }
@@ -2573,7 +2570,7 @@ section.app-video:before {
 /*20.01: footer top*/
 footer.footer {
   position: relative;
-  background-color: #efefef;
+  background-color: #F7F6F9;
 }
 
 .footerbg {

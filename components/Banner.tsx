@@ -61,7 +61,7 @@ const Banner: React.FC = () => {
                                     </div>
                                 </div> */}
 
-                                <h1>Moai<br />private check-in<br />for your business</h1>
+                                <h1>Private check-in<br />for your business</h1>
                                 <p>
                                     Keeping your customers safe, respecting their privacy.<br />
                                     No need to keep manual records, quickly print out QRCode for all your venues.

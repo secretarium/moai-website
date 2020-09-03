@@ -111,9 +111,9 @@
         color: #979caf;
     }
 
-    .banner-text-inner h1 {
+    /* .banner-text-inner h1 {
         font-size: 40px;
-    }
+    } */
 
     .banner-shape-inner .shape5 {
         top: 31%;
@@ -926,7 +926,7 @@
 
     .logo {
         overflow: hidden;
-        width: 45px;
+        width: 90px;
     }
     .logo img {
         display: block;

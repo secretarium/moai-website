@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
             <div className="footer-top pt-120 pb-110">
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-3 col-sm-6">
+                        <div className="col-lg-4 col-sm-6 pr-5">
                             <div className="footer-widget">
                                 <div className="footer-logo innovate">
                                     <a href="index.html">
@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
                         </div>
 
 
-                        <div className="col-lg-3 col-sm-6">
+                        <div className="col-lg-4 col-sm-6 px-4">
                             <div className="footer-widget">
                                 <div className="footer-logo secretarium">
                                     <a href="https://secretarium.com" target="_blank" rel="noreferrer">

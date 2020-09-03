@@ -8,7 +8,7 @@ const Register: React.FC = () => {
                 <Row className="justify-content-center">
                     <Col md={12} lg={10}>
                         <div className="register-app-inner text-center">
-                            <h2>
+                            <h2 className="h1">
                                 Moai is almost ready.
                             </h2>
                             <h3>
