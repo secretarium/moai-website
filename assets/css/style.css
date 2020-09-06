@@ -2516,6 +2516,148 @@ section.app-video:before {
   background: #532c73;
 }
 /* =================================================
+        venue area
+================================================= */
+.crowd-bg {
+    background-image: url('../img/banner/crowd.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fff;
+}
+.secure-app-inner h2.h1 {
+  font-size: 45px;
+  line-height: 60px;
+  margin-bottom: 18px;
+    color: #fff;
+}
+
+.secure-app-inner h3 {
+  font-size: 24px;
+  color: #ddd;
+  font-weight: 400;
+  margin-bottom: 80px;
+}
+.secure-app-inner .btn {
+  border-color: #d9437d;
+  color: #fff;
+  background: #d9437d;
+  margin-bottom: 4px;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 23px 60px;
+}
+
+.secure-app-inner .btn:hover {
+  border-color: #36324a;
+  background: #36324a;
+}
+.secure-app-inner .btn:hover:before {
+  background: #36324a;
+  border-color: #36324a;
+  -webkit-transform: scale(30);
+  transform: scale(30);
+}
+/* =================================================
+        venue area
+================================================= */
+.venue-gest-bg {
+    background: linear-gradient(90deg, #F7F6F9 50%, #ffffff 50%);
+}
+@media (max-width: 991px) {
+    .venue-gest-bg {
+        background: linear-gradient(0deg, #FFFFFF 50%, #F7F6F9 50%);
+    }
+}
+/* =================================================
+        venue area
+================================================= */
+.venue-app-inner h2.h1 {
+  font-size: 45px;
+  line-height: 60px;
+  margin-bottom: 18px;
+}
+
+.venue-app-inner h3 {
+  font-size: 24px;
+  color: #6f6c7f;
+  font-weight: 400;
+  margin-bottom: 80px;
+}
+.venue-app-inner .btn {
+  border-color: #d9437d;
+  color: #fff;
+  background: #d9437d;
+  margin-bottom: 4px;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 23px 60px;
+}
+
+.venue-app-inner .btn:hover {
+  border-color: #36324a;
+  background: #36324a;
+}
+.venue-app-inner .btn:hover:before {
+  background: #36324a;
+  border-color: #36324a;
+  -webkit-transform: scale(30);
+  transform: scale(30);
+}
+
+.venue-input {
+    border: none;
+    border-bottom: solid 2px #d9437d;
+    text-align: center;
+    max-width: 100%;
+    width: 300px;
+    font-size: 18px;
+}
+/* =================================================
+        guest area
+================================================= */
+.guest-app-inner h2.h1 {
+  font-size: 45px;
+  line-height: 60px;
+  margin-bottom: 18px;
+}
+
+.guest-app-inner h3 {
+  font-size: 24px;
+  color: #6f6c7f;
+  font-weight: 400;
+  margin-bottom: 80px;
+}
+.guest-app-inner .btn {
+  border-color: #d9437d;
+  color: #fff;
+  background: #d9437d;
+  margin-bottom: 4px;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 23px 60px;
+}
+
+.guest-app-inner .btn:hover {
+  border-color: #36324a;
+  background: #36324a;
+}
+.guest-app-inner .btn:hover:before {
+  background: #36324a;
+  border-color: #36324a;
+  -webkit-transform: scale(30);
+  transform: scale(30);
+}
+
+.guest-input {
+    border: none;
+    border-bottom: solid 2px #d9437d;
+    text-align: center;
+    max-width: 100%;
+    width: 300px;
+    font-size: 18px;
+}
+/* =================================================
         download area
 ================================================= */
 .register-app-inner {

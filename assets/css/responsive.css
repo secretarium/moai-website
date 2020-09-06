@@ -64,14 +64,14 @@
         line-height: 32px;
     }
 
-    ..register-app-inner h2.h1 {
+    .register-app-inner h2.h1, .venue-app-inner h2.h1, .guest-app-inner h2.h1 {
         font-size: 42px;
         line-height: 55px;
         margin-bottom: 18px;
     }
 
-    ..register-app-inner h3 {
-        font-size: 24px;
+    .register-app-inner h3, .venue-app-inner h3, .guest-app-inner h3 {
+        font-size: 22px;
         margin-bottom: 55px;
     }
 
@@ -433,7 +433,7 @@
         margin-bottom: 24px;
     }
 
-    .register-app-inner h2.h1 {
+    .register-app-inner h2.h1, .venue-app-inner h2.h1, .guest-app-inner h2.h1 {
         font-size: 36px;
         line-height: 48px;
         margin-bottom: 18px;
@@ -634,14 +634,14 @@
         margin-bottom: 16px;
     }
 
-    .register-app-inner h2.h1 {
+    .register-app-inner h2.h1, .venue-app-inner h2.h1, .guest-app-inner h2.h1 {
         font-size: 24px;
         line-height: 40px;
         margin-bottom: 18px;
     }
 
-    .register-app-inner h3 {
-        font-size: 13px;
+    .register-app-inner h3, .venue-app-inner h3, .guest-app-inner h3 {
+        font-size: 18px;
         margin-bottom: 20px;
     }
 
@@ -727,7 +727,7 @@
         right: -50px;
     }
 
-    .register-app-inner {
+    .register-app-inner, .venue-app-inner, .guest-app-inner {
         padding: 0 0px;
     }
     
@@ -851,7 +851,7 @@
         right: 13%;
     }
 
-    .register-app-inner h2.h1 {
+    .register-app-inner h2.h1, .venue-app-inner h2.h1, .guest-app-inner h2.h1 {
         font-size: 30px;
         line-height: 44px;
         margin-bottom: 18px;

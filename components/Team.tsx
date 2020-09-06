@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 const Team: React.FC = () => {
     return (
-        <section id="register" className="border-top pt-110 pb-150">
+        <section className="border-top pt-110 pb-150">
             <Container>
                 <Row className="justify-content-center">
                     <Col md={12} lg={10}>
