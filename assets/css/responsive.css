@@ -12,14 +12,15 @@
 
 @media (min-width: 992px) and (max-width: 1600px) {
     .banner-inner-area.banner-area1:before {
-        right: -19%;
+        right: -29%;
         width: calc(100% + 500px);
     }
 }
 
-@media (min-width: 1401px) and (max-width: 3000px) {
+@media (min-width: 1401px) {
     .banner-inner-area.banner-area1:before {
-        right: 0px;
+        left: 50%;
+        width: calc(900px);
     }
 }
 

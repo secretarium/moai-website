@@ -1183,13 +1183,13 @@ label input[type="radio"] {
   margin-bottom: 20px;
 }
 .banner-inner-area.banner-area1:before {
-  background: url(../img/banner/main-base.png);
+  background: url(../img/banner/main-base.svg);
   background-position: top right;
   background-repeat: no-repeat;
   height: 100%;
   width: 100%;
   top: 0%;
-  right: -19%;
+  right: -29%;
   position: absolute;
   content: "";
 }

@@ -11,6 +11,13 @@ const NavLinks: React.FC = () => {
                     </a>
                 </Link>
             </li>
+            <li>
+                <Link href="/faq">
+                    <a title="FAQ">
+                        FAQ
+                    </a>
+                </Link>
+            </li>
         </ul>
     );
 };

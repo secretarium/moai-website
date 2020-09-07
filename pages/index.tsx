@@ -8,7 +8,7 @@ import ComparisonVG from '../components/ComparisonVG';
 import Register from '../components/Register';
 import Footer from '../components/Footer';
 
-const HomePage = () => {
+const HomePage: React.FC = () => {
     return (
         <Layout pageTitle="Moai | Home">
             <Header />
