@@ -122,7 +122,7 @@
     }
 
     .main-menu-wrap .btn {
-        border-color: #532c73;
+        border-color: #E95C59;
     }
 
     /* Header */
@@ -183,7 +183,7 @@
         top: 44px !important;
         left: 15px !important;
         width: calc(100% - 30px) !important;
-        background: #36324a;
+        background: #213963;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         max-height: 350px;
         overflow-y: auto;
@@ -235,7 +235,7 @@
     }
 
     .header-menu #menu-button {
-        color: #d9437d;
+        color: #cc3852;
         font-size: 28px;
         display: inline-block;
         cursor: pointer;
@@ -285,12 +285,12 @@
 
     .header-menu #menu-button.menu-opened:before,
     .header-menu .submenu-button.submenu-opened:before {
-        border-top-color: #d9437d;
+        border-top-color: #cc3852;
     }
 
     .header-menu>ul>li:not(.active):hover>a,
     .header-menu>ul>li:not(.active)>a:hover {
-        color: #d9437d;
+        color: #cc3852;
     }
 
     .header-menu>ul>li>ul {
@@ -414,7 +414,7 @@
 
     .main-header.sticky .header-menu ul ul li a,
     .main-header .header-menu ul ul li a {
-        background: #36324a;
+        background: #213963;
         color: #979caf;
     }
 
@@ -555,7 +555,7 @@
     }
 
     .single-price-plan.active {
-        border: 2px solid #532c73;
+        border: 2px solid #E95C59;
         padding: 70px 0 80px;
         margin-top: -20px;
         margin-bottom: 20px;
@@ -572,7 +572,7 @@
     }
 
     .single-price-top h4 {
-        color: #36324a;
+        color: #213963;
         margin-bottom: 25px;
         font-size: 20px;
     }
@@ -647,9 +647,9 @@
     }
 
     .register-app-inner .btn {
-        border-color: #d9437d;
+        border-color: #cc3852;
         color: #fff;
-        background: #d9437d;
+        background: #cc3852;
         margin-bottom: 4px;
         font-size: 14px;
         font-weight: 600;
@@ -768,7 +768,7 @@
     }
 
     .main-header.sticky .blog-menu.header-menu i {
-        color: #d9437d;
+        color: #cc3852;
     }
 
     .banner-inner-area.banner-area1:before {

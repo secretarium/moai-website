@@ -4,9 +4,9 @@ import Header from '../components/Header';
 import MobileMenu from '../components/MobileMenu';
 import Banner from '../components/Banner';
 import SecureCT from '../components/SecureCT';
-import ComparisonVG from '../components/ComparisonVG';
 import Register from '../components/Register';
 import Footer from '../components/Footer';
+import Venues from '../components/Venues';
 
 const HomePage: React.FC = () => {
     return (
@@ -15,7 +15,7 @@ const HomePage: React.FC = () => {
             <MobileMenu />
             <Banner />
             <SecureCT />
-            <ComparisonVG />
+            <Venues />
             <Register />
             <Footer />
         </Layout>

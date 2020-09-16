@@ -12,12 +12,12 @@ const Register: React.FC = () => {
                                 Moai is almost ready.
                             </h2>
                             <h3>
-                                Pop your email below and stay tuned<br />about the release of Moai
+                                Enter your email below and we’ll let you know as soon as it’s launched.
                             </h3>
-                            <form>
-                                <input required className="register-input" placeholder="Enter your email address" />
+                            <form name="mc-embedded-subscribe-form" target="_blank" action="https://moaiapp.us17.list-manage.com/subscribe/post?u=1bbe9d3ad8430f833640de63c&id=284f13df99" method="post" id="mc-embedded-subscribe-form">
+                                <input id="mce-EMAIL" type="email" name="EMAIL" required className="register-input" placeholder="Enter your email address" />
                                 <br /><br />
-                                <button className="btn" type="submit">
+                                <button id="mc-embedded-subscribe" className="btn" type="submit">
                                     Register for updates
                                 </button>
                             </form>

@@ -94,7 +94,7 @@ const HeaderHome: React.FC<{
                             <div className="col-lg-3 col-md-4 col-sm-5 d-md-block d-none">
                                 <div className="urgent-call text-right">
                                     <a href="#register" className="btn">
-                                        Get moai
+                                        Get Moai
                                     </a>
                                 </div>
                             </div>

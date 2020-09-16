@@ -9,10 +9,10 @@ const SecureCT: React.FC = () => {
                     <Col md={12} lg={10}>
                         <div className="secure-app-inner text-center">
                             <h2 className="h1">
-                                Secure contact tracing
+                                Moai doesn’t collect any personal information
                             </h2>
                             <h3>
-                                Moai doesn’t collect any personal information. It can trace risk of infection without ever knowing who you are or where you’ve been. Protecting identities, keeping people well and allowing businesses to keep their doors open.
+                                It traces risk of infection without ever knowing who you are or where you’ve been. Just scan into venues anonymously with their unique QR code. You’ll be notified via the app if there’s any risk you’ve been exposed to COVID-19.
                             </h3>
                             <br />
                             <div className="row text-center justify-content-center">
