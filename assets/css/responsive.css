@@ -669,6 +669,27 @@
 /* 3. Medium devices (less than  768px) */
 @media (max-width: 767.98px) {
     
+    .banner-area-inner {
+        background-color: #E95C59;
+    }
+    
+    .banner-area-inner h1, .banner-area-inner p, .banner-area-inner p i {
+        color: #ffffff;
+    }
+
+    .banner-text-inner .btn+.btn {
+        color: #ffffff;
+        border-color: #ffffff;
+    }
+
+    .banner-phone-l {
+        left: -100px;
+    }
+
+    .banner-phone-r {
+        left: 200px;
+    }
+
     .banner-inner-area.banner-area1:before {
         display: none;
     }
@@ -878,6 +899,7 @@
 
 /* 5. Extra Small devices (less than  480px) */
 @media (max-width: 479.98px) {
+
     .banner-text-inner .btn+.btn {
         margin-left: 0;
         margin-top: 15px;
