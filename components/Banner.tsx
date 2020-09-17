@@ -10,8 +10,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 // import shape7 from '../assets/img/banner/shaps7.png';
 
 import bannerMoc from '../assets/img/banner/mockup.png';
-import bannerPhoneL from '../assets/img/banner/mockup1.png';
-import bannerPhoneR from '../assets/img/banner/mockup2.png';
+import bannerPhoneL from '../assets/img/banner/mockup2.png';
+import bannerPhoneR from '../assets/img/banner/mockup1.png';
 
 const Banner: React.FC = () => {
     return (
