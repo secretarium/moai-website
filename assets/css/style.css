@@ -2573,6 +2573,10 @@ section.app-video:before {
 /* =================================================
         venue area
 ================================================= */
+.venue-app-outer {
+  background-color: #fafafa;
+}
+
 .venue-app-inner h2.h1 {
   font-size: 45px;
   line-height: 60px;
@@ -2585,7 +2589,7 @@ section.app-video:before {
   font-weight: 400;
   margin-bottom: 80px;
 }
-.venue-app-inner .btn {
+/* .venue-app-inner .btn {
   border-color: #cc3852;
   color: #fff;
   background: #cc3852;
@@ -2604,7 +2608,7 @@ section.app-video:before {
   border-color: #213963;
   -webkit-transform: scale(30);
   transform: scale(30);
-}
+} */
 
 .venue-input {
     border: none;
@@ -2661,6 +2665,10 @@ section.app-video:before {
 /* =================================================
         download area
 ================================================= */
+#register {
+  background-color: #fafafa;
+}
+
 .register-app-inner {
   padding: 0 60px;
 }

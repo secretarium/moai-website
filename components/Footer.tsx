@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
                                     </a>
                                 </div>
                                 <p>
-                                    Moai is developed with love by <a href="https://secretarium.com" target="_blank" rel="noreferrer">Secretarium Ltd.</a> a London-based deep-tech start-up specialized in confidential computing.
+                                    Moai is developed with love in London by <a href="https://secretarium.com" target="_blank" rel="noreferrer">Secretarium</a>, a deep-tech start-up specialized in confidential computing.
                                 </p>
 
                             </div>

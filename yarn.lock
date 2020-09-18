@@ -1107,6 +1107,11 @@
     lodash "^4.17.15"
     lodash-es "^4.17.15"
 
+"@secretarium/connector@0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@secretarium/connector/-/connector-0.2.1.tgz#0ea90525c0fddeae83103e5bcbca1081e4dacbf9"
+  integrity sha512-7VIh7YJzgPbgKE0ECcJIhS2hPGY2VWqnxU4mP+g/xoHILVz6sT1bz2pivZ0yX1hyw7v0f2rmVJe0ExYSg7l5IA==
+
 "@types/classnames@^2.2.10":
   version "2.2.10"
   resolved "https://registry.yarnpkg.com/@types/classnames/-/classnames-2.2.10.tgz#cc658ca319b6355399efc1f5b9e818f1a24bf999"
@@ -4827,6 +4832,11 @@ punycode@^2.1.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
+
+qrcode-svg@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/qrcode-svg/-/qrcode-svg-1.1.0.tgz#2087549843dc5d0a3f8e8aa046cd9bcf23708cc3"
+  integrity sha512-XyQCIXux1zEIA3NPb0AeR8UMYvXZzWEhgdBgBjH9gO7M48H9uoHzviNz8pXw3UzrAcxRRRn9gxHewAVK7bn9qw==
 
 query-string@^4.1.0:
   version "4.3.4"

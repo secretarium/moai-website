@@ -63,9 +63,7 @@ const Banner: React.FC = () => {
 
                                 <h1>Secure contact<br />tracing</h1>
                                 <p>
-                                    <i className="fa fa-check"></i>&nbsp;Protecting identities<br />
-                                    <i className="fa fa-check"></i>&nbsp;Keeping people well<br />
-                                    <i className="fa fa-check"></i>&nbsp;Helping businesses stay open
+                                    A quick and easy track and trace system that keeps identities private and locations anonymous.
                                 </p>
                                 <a href="#register" className="btn">
                                     Register
