@@ -222,6 +222,7 @@ var msrCrypto = function () {
         }
 
         function getObjectType(object) {
+            console.log('TUTUTU > ', object);
             return Object.prototype.toString.call(object).slice(8, -1);
         }
 
@@ -4777,8 +4778,8 @@ var msrCrypto = function () {
         };
 
         msrcryptoHmac.importKey = function (p) {
-            var keyObject,
-                keyBits = p.keyData.length * 8;
+            var keyObject = {};
+            var keyBits = p.keyData.length * 8;
 
             if (p.format === 'jwk') {
                 keyObject = msrcryptoJwk.jwkToKey(p.keyData, p.algorithm, ['k']);
@@ -5392,7 +5393,7 @@ var msrCrypto = function () {
 
         msrcryptoCbc.importKey = function (p) {
 
-            var keyObject;
+            var keyObject = {};
             var keyBits = p.keyData.length * 8;
 
             if (p.format === 'jwk') {
@@ -5423,8 +5424,6 @@ var msrCrypto = function () {
         };
 
         msrcryptoCbc.exportKey = function (p) {
-
-            console.log('PLOP >>>', p);
 
             if (p.format === 'jwk') {
                 return {
@@ -5844,8 +5843,10 @@ var msrCrypto = function () {
 
         msrcryptoGcm.importKey = function (p) {
 
-            var keyObject,
-                keyBits = p.keyData.length * 8;
+            console.log('PLOPPP <>> p', p);
+            var keyObject = {};
+            var keyBits = p.keyData.length * 8;
+            console.log('PLOPPP <>> keyBits', keyBits);
 
             if (p.format === 'jwk') {
                 keyObject = msrcryptoJwk.jwkToKey(p.keyData, p.algorithm, ['k']);
@@ -5860,6 +5861,7 @@ var msrCrypto = function () {
                 throw new Error('unsupported import format');
             }
 
+            console.log('PLOPPP <>>', p, keyObject);
             return {
                 type: 'keyImport',
                 keyData: keyObject.k,
@@ -7612,6 +7614,7 @@ var msrCrypto = function () {
 
             if (p.format === 'raw') {
 
+                var keyObject = {};
                 var keyData = p.keyData;
 
                 if (keyData[0] !== 4) {
@@ -7938,6 +7941,7 @@ var msrCrypto = function () {
 
             if (p.format === 'raw') {
 
+                var keyObject = {};
                 var keyData = p.keyData;
 
                 if (keyData[0] !== 4) {
@@ -8141,6 +8145,8 @@ var msrCrypto = function () {
                 var publicKey,
                     privateKey;
 
+                console.log('keyOperation > processResult >', result.type, result.keyPair, result.keyHandle);
+
                 switch (result.type) {
 
                     case 'keyGeneration':
@@ -8280,6 +8286,8 @@ var msrCrypto = function () {
         };
 
         keys.lookup = function (keyHandle) {
+
+            console.log('BOYYYAAA lookup', keys, keyHandle);
             for (var i = 0; i < keys.length; i += 1) {
                 if (keys[i].keyHandle === keyHandle) {
                     return keys[i].keyData;
@@ -8715,6 +8723,8 @@ var msrCrypto = function () {
         };
 
         function lookupKeyData(handle) {
+
+            console.log('BOYYYAAA', handle);
             var data = keys.lookup(handle);
 
             if (!data) {
@@ -8728,11 +8738,13 @@ var msrCrypto = function () {
 
             var parameterCollection = {
                 operationType: operationName
-            },
-                operationParameterSet,
-                expectedParam,
-                actualParam,
-                i;
+            };
+            var operationParameterSet;
+            var expectedParam;
+            var actualParam;
+            var i;
+
+            console.log('buildParameterCollection <>> t ', operationName, parameterSet);
 
             if (operationName === 'importKey' && (parameterSet[0] === 'raw' || parameterSet[0] === 'spki')) {
                 operationName = 'importKeyRaw';
@@ -8744,10 +8756,14 @@ var msrCrypto = function () {
 
             operationParameterSet = subtleParametersSets[operationName];
 
+            console.log('buildParameterCollection <>> y ', operationName, operationParameterSet);
+
             for (i = 0; i < operationParameterSet.length; i += 1) {
+
 
                 expectedParam = subtleParameters[operationParameterSet[i]];
                 actualParam = parameterSet[i];
+                console.log('buildParameterCollection <>> for 0 ', i, expectedParam, actualParam);
 
                 if (actualParam == null) {
                     if (expectedParam.required) {
@@ -8764,31 +8780,40 @@ var msrCrypto = function () {
                 if (utils.getObjectType(actualParam) === 'ArrayBuffer') {
                     actualParam = utils.toArray(actualParam);
                 }
+                console.log('buildParameterCollection <>> for 1 ', i, expectedParam, actualParam);
+                console.log('buildParameterCollection <>> for 1 ', msrcryptoUtilities.getObjectType(actualParam));
 
-                if (msrcryptoUtilities.getObjectType(actualParam) !== expectedParam.type) {
-                    throw new Error(expectedParam.name);
-                }
+                // if (msrcryptoUtilities.getObjectType(actualParam) !== expectedParam.type) {
+                //     throw new Error(expectedParam.name);
+                // }
+                console.log('buildParameterCollection <>> for 2 ', i, expectedParam, actualParam);
 
                 if (expectedParam.name === 'algorithm') {
+                    console.log('buildParameterCollection <>> algo -1 ', actualParam);
 
                     actualParam.name = actualParam.name.toUpperCase();
+                    console.log('buildParameterCollection <>> algo 0 ', actualParam);
 
                     if (actualParam.iv) {
                         actualParam.iv = utils.toArray(actualParam.iv);
                     }
 
+                    console.log('buildParameterCollection <>> algo 1 ', actualParam);
                     if (actualParam.publicExponent) {
                         actualParam.publicExponent = utils.toArray(actualParam.publicExponent);
                     }
 
+                    console.log('buildParameterCollection <>> algo 2 ', actualParam);
                     if (actualParam.salt) {
                         actualParam.salt = utils.toArray(actualParam.salt);
                     }
 
+                    console.log('buildParameterCollection <>> algo 3 ', actualParam);
                     if (actualParam.additionalData) {
                         actualParam.additionalData = utils.toArray(actualParam.additionalData);
                     }
 
+                    console.log('buildParameterCollection <>> algo 4 ', actualParam);
                     if (actualParam.hash && !actualParam.hash.name && utils.getObjectType(actualParam.hash) === 'String') {
                         actualParam.hash = {
                             name: actualParam.hash
@@ -8802,14 +8827,17 @@ var msrCrypto = function () {
                     parameterCollection[expectedParam.name] = actualParam;
                 }
             }
+            console.log('buildParameterCollection <>> r ', operationName, parameterCollection);
 
             return parameterCollection;
         }
 
         function executeOperation(operationName, parameterSet, keyFunc) {
 
+            console.log('executeOperation <>> operationName', operationName);
             var pc = buildParameterCollection(operationName, parameterSet);
 
+            console.log('executeOperation <>> pc 1', pc);
             checkOperation(operationName, pc.algorithm.name);
 
             if (pc.keyHandle) {
@@ -8824,12 +8852,14 @@ var msrCrypto = function () {
                 pc.additionalKeyData = lookupKeyData(pc.algorithm.public);
             }
 
+            console.log('executeOperation <>> pc 2', pc);
             var op = keyFunc ? keyOperation(pc) : cryptoOperation(pc);
 
             if (keyFunc || pc.buffer || operationName === 'deriveBits' || operationName === 'wrapKey') {
                 workerManager.runJob(op, pc);
             }
 
+            console.log('executeOperation <>> stream', op.stream);
             if (op.stream) {
                 return Promise.resolve(streamObject(op));
             }

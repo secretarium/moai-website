@@ -19,7 +19,7 @@ const FAQ: React.FC = () => {
                     If you are using the Moai app, you won't be asked to provide any personal identifiers, like your name or phone number. When you download the app, you will be assigned a unique ID, no personal information is attached to this ID and the app doesn’t trace your geolocation. It’s the same for the venues you visit, they will be assigned a unique ID that is recorded via a QR code when you scan in, but no address information will ever be known.
                     <br />
                     <br />
-                    If you choose not to download the app, and check in using the browser instead, you will be asked to provide your name and contact number. This information, along with the unique IDs of all app users and venues, is always fully encrypted using a mixture of secure hardware and tamper-proof code. Meaning that no human will ever be able to access it.
+                    If you choose not to download the app, and check in using the browser instead, you will be asked to provide your name and contact number. This information, along with the unique IDs of all app users and venues, is always fully encrypted using a mixture of secure hardware and tamper-proof code.
                 </p>
                 <br />
                 <h5>How much does it cost to use Moai?</h5>
@@ -29,7 +29,7 @@ const FAQ: React.FC = () => {
                 <br />
                 <h5>Can data collected through Moai be used for marketing?</h5>
                 <p>
-                    No. There are no personal identifiers recorded on the Moai app for guests or venues. If you choose not to download the app, and check in using the browser instead, you will be asked to provide your name and contact number. This information is always fully encrypted, no human has access to it, and it cannot be used for marketing purposes.
+                    No. There are no personal identifiers recorded on the Moai app for guests or venues. If you choose not to download the app, and check in using the browser instead, you will be asked to provide your name and contact number. This information is always fully encrypted, and it cannot be used for marketing purposes.
                 </p>
                 <h5>How does the app trace me if it doesn’t know where I’ve been?</h5>
                 <p>

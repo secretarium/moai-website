@@ -222,8 +222,8 @@ body {
   border-color: #E95C59;
 }
 .btn:hover:before {
-  -webkit-transform: scale(20);
-  transform: scale(20);
+  -webkit-transform: scale(24);
+  transform: scale(24);
   opacity: 1;
   visibility: visible;
 }
@@ -1121,8 +1121,8 @@ label input[type="radio"] {
   background: #213963;
   visibility: visible;
   opacity: 1;
-  -webkit-transform: scale(20);
-  transform: scale(20);
+  -webkit-transform: scale(24);
+  transform: scale(24);
 }
 .sticky .main-menu-wrap .btn {
   border-color: #1CA8E1;
@@ -1802,8 +1802,8 @@ section.app-video:before {
   background: #E95C59;
 }
 .single-price-plan.active .btn:before {
-  -webkit-transform: scale(20);
-  transform: scale(20);
+  -webkit-transform: scale(24);
+  transform: scale(24);
   visibility: visible;
   opacity: 1;
 }
@@ -2059,8 +2059,8 @@ section.app-video:before {
   background-color: #E95C59;
   opacity: 1;
   visibility: visible;
-  -webkit-transform: scale(20);
-  transform: scale(20);
+  -webkit-transform: scale(24);
+  transform: scale(24);
 }
 .blog-list-inner .single-blog-inner .post-details .btn:hover {
   border-color: #E95C59;
@@ -3604,4 +3604,22 @@ h1 span {
     width: 45px;
     height: 45px;
   }
+}
+
+#grcode-generator {
+    height: auto;
+    transition: all ease-in-out 0.4s;
+}
+
+#grcode-generator .btn.dl-pdf {
+    border-color: #213963;
+    color: #213963;
+}
+
+#grcode-generator .btn.dl-pdf:hover {
+    color: #fff;
+}
+
+#grcode-generator .btn.dl-pdf::before {
+    background-color: #213963;
 }

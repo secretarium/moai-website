@@ -121,10 +121,6 @@
         left: 49%;
     }
 
-    .main-menu-wrap .btn {
-        border-color: #E95C59;
-    }
-
     /* Header */
     .main-header .row {
         position: relative;
@@ -599,6 +595,11 @@
         line-height: 50px;
     }
 
+    h4 {
+        font-size: 23px;
+        font-weight: bold;
+    }
+
     .theme-video-wrap {
         padding-top: 200px;
         padding-bottom: 200px;
@@ -807,9 +808,15 @@
     }
      h2,
     .h2 {
-        font-size: 20px !important;
+        font-size: 24px !important;
         line-height: 36px !important;
+        font-weight: bold;
     }
+    
+    h4 {
+        font-size: 18px;
+    }
+
     body,
     p {
         font-size: 14px;
