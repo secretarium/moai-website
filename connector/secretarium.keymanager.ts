@@ -1,7 +1,6 @@
 import * as Utils from './secretarium.utils';
 import { ErrorMessage, ErrorCodes } from './secretarium.constant';
-// import crypto from './msrcrypto';
-const crypto = global.crypto;
+import crypto from './msrcrypto';
 
 export interface ExportedKey {
     publicKey: JsonWebKey; // need to use raw (pkcs8) as soon as firefox fixes bug 1133698
