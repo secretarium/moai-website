@@ -3,33 +3,16 @@
         "node_modules"
     ],
     "compilerOptions": {
+        "sourceMap": true,
         "allowSyntheticDefaultImports": true,
-        "jsx": "preserve",
+        "jsx": "react-native",
         "lib": [
-            "es2015",
             "dom",
-            "es5"
+            "esnext"
         ],
         "moduleResolution": "node",
         "noEmit": true,
         "skipLibCheck": true,
-        "resolveJsonModule": true,
-        "target": "es5",
-        "allowJs": true,
-        "strict": false,
-        "forceConsistentCasingInFileNames": true,
-        "esModuleInterop": true,
-        "module": "commonjs",
-        "isolatedModules": true
-    },
-    "include": [
-        "next-env.d.ts",
-        "global.d.ts",
-        "components/**/*.ts",
-        "components/**/*.tsx",
-        "connector/**/*.ts",
-        "connector/**/*.tsx",
-        "pages/**/*.ts",
-        "pages/**/*.tsx"
-    ]
+        "resolveJsonModule": true
+    }
 }

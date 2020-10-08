@@ -1,0 +1,15 @@
+# .gitattributes
+* text=auto
+* text eol=lf
+*.ttf binary
+*.png binary
+*.jpg binary
+
+# GitHub Linguist Override
+.github/* linguist-vendored
+.vscode/* linguist-vendored
+scripts/* linguist-vendored
+packages/mobile/*.* linguist-vendored
+packages/mobile/.expo/* linguist-vendored
+packages/server/*.* linguist-vendored
+*.* linguist-vendored
