@@ -3,6 +3,10 @@
     @apply leading-relaxed;
 }
 
+.markdown a {
+    @apply text-accent-2;
+}
+
 .markdown p,
 .markdown ul,
 .markdown ol,
@@ -17,7 +21,7 @@
     @apply leading-snug;
 }
 
-.markdown h3 {
+.markdown h4 {
     @apply text-2xl;
     @apply mt-8;
     @apply mb-4;
