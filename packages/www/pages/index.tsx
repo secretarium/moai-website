@@ -77,12 +77,12 @@ const Index: React.FC = () => {
                                 <h3 className="text-2xl md:text-3xl text-gray-700 pb-16">
                                     Instantly generate an anonymous QR code to allow people to scan into your location quickly. Everything else is handled securely in the app.
                                 </h3>
+                                <ul className="text-xl pb-12">
+                                    <li>Your business information stays private </li>
+                                    <li>No need to handle anybody’s personal data </li>
+                                    <li>Helps keep your location COVID-19 compliant</li>
+                                </ul>
                                 <p className="text-xl pb-12">
-                                    <ul>
-                                        <li>Your business information stays private </li>
-                                        <li>No need to handle anybody’s personal data </li>
-                                        <li>Helps keep your location COVID-19 compliant</li>
-                                    </ul>
                                     <b>It only takes a minute to set up secure track and trace for your location</b>
                                 </p>
                                 <Link href="/codes">
@@ -105,14 +105,12 @@ const Index: React.FC = () => {
                                 <h3 className="text-2xl md:text-3xl text-gray-700 pb-16">
                                     The secure app traces risk of infection without ever knowing who you are or where you’ve been. Scan into a location using its anonymous QR code, without having to disclose any personal information. If there’s any risk you’ve been exposed to COVID-19, you’ll be notified vie the app.
                                 </h3>
-                                <p className="text-xl">
-                                    <ul>
-                                        <li>None of your personal data is collected</li>
-                                        <li>Does not use GPS or Bluetooth to track you</li>
-                                        <li>The government does not have access to your information</li>
-                                        <li>The app cannot be used to track you while you quarantine</li>
-                                    </ul>
-                                </p>
+                                <ul className="text-xl">
+                                    <li>None of your personal data is collected</li>
+                                    <li>Does not use GPS or Bluetooth to track you</li>
+                                    <li>The government does not have access to your information</li>
+                                    <li>The app cannot be used to track you while you quarantine</li>
+                                </ul>
                             </div>
                         </div>
                     </Container>
