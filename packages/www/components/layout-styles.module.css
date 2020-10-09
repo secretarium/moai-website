@@ -9,11 +9,13 @@
     box-shadow: 0 0 0 0 #fff;
     transition: box-shadow 300ms ease-in-out;
     transition: height 300ms ease-in-out;
+    transition: background-color 300ms ease-in-out;
 }
 
 .stickyPanel .stuck {
     z-index: 999;
     height: 8rem;
+    background-color: #fff;
     box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.1);
 }
 

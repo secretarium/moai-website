@@ -16,9 +16,9 @@ const Index: React.FC = () => {
                     <title>Moai</title>
                 </Head>
                 <section id="banner">
-                    <Container className="p-0 md:p-5">
+                    <Container padding="p-0 md:p-5">
                         <div className="py-8 lg:pb-30 flex flex-col lg:flex-row">
-                            <div className="px-8 lg:w-1/3">
+                            <div className="px-12 md:px-8 lg:w-1/3">
                                 <PostTitle>Secure contact<br />tracing from Moai</PostTitle>
                                 <p className="text-xl">
                                     Our quick and easy COVID-19 tracing system keeps your identity private and your location anonymous. Our app works on all Android and iOS devices and supports cross-border contact tracing.
