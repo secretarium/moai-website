@@ -1,7 +1,11 @@
 import React from 'react';
 
-const Container: React.FC = ({ children }) => {
-    return <div className="container mx-auto px-5">{children}</div>;
+type ContainerProps = {
+    className: string;
+};
+
+const Container: React.FC<ContainerProps> = ({ children, className }) => {
+    return <div className={`container mx-auto px-5 ${className}`}>{children}</div>;
 };
 
 export default Container;

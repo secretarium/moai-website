@@ -15,19 +15,19 @@ const NavBar: React.FC<NavBarProps> = ({ fixedToggle }) => {
     const menuItems = (
         <div className="text-lg md:flex-grow text-left md:text-right">
             <Link href="/">
-                <a className="block mt-4 md:inline md:mt-0 mr-12 duration-200 transition-colors hover:text-accent-2">Home</a>
+                <a className="block mt-4 md:inline md:mt-0 mr-5 lg:mr-12 duration-200 transition-colors hover:text-accent-2 px-2 lg:px-8" onClick={() => setIsExpanded(false)}>Home</a>
             </Link>
             <Link href="/faq">
-                <a className="block mt-4 md:inline md:mt-0 mr-12 duration-200 transition-colors hover:text-accent-2">FAQ</a>
+                <a className="block mt-4 md:inline md:mt-0 mr-5 lg:mr-12 duration-200 transition-colors hover:text-accent-2 px-2 lg:px-8" onClick={() => setIsExpanded(false)}>FAQ</a>
             </Link>
             <Link href="/about">
-                <a className="block mt-4 md:inline md:mt-0 mr-12 duration-200 transition-colors hover:text-accent-2">About us</a>
+                <a className="block mt-4 md:inline md:mt-0 mr-5 lg:mr-12 duration-200 transition-colors hover:text-accent-2 px-2 lg:px-8" onClick={() => setIsExpanded(false)}>About us</a>
             </Link>
             <Link href="/blog">
-                <a className="block mt-4 md:inline md:mt-0 mr-12 duration-200 transition-colors hover:text-accent-2">Blog</a>
+                <a className="block mt-4 md:inline md:mt-0 mr-5 lg:mr-12 duration-200 transition-colors hover:text-accent-2 px-2 lg:px-8" onClick={() => setIsExpanded(false)}>Blog</a>
             </Link>
             <Link href="/#register">
-                <a className="block mt-4 md:inline md:mt-0 duration-200 transition-colors text-white bg-accent-1 rounded-full px-8 py-4" onClick={() => setIsExpanded(false)}>Get Moai</a>
+                <a className="block mt-4 md:inline md:mt-0 mr-5 duration-200 transition-colors text-white bg-accent-1 rounded-full px-8 py-4" onClick={() => setIsExpanded(false)}>Get Moai</a>
             </Link>
         </div>
     );

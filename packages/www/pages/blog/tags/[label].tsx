@@ -28,14 +28,14 @@ const Tag: React.FC<TagProps> = ({ tag, posts }) => {
                     )
                     : (
                         <>
-                            <article className="mb-32">
+                            <article className="mb-32 px-8">
                                 <Head>
                                     <title>
                                         #{tag} | Moai Blog
                                     </title>
                                 </Head>
                                 <PostTitle>#{tag}</PostTitle>
-                                <div className="grid grid-cols-1 md:grid-cols-2 md:col-gap-16 lg:col-gap-32 row-gap-20 md:row-gap-32 mb-32">
+                                <div className="grid grid-cols-1 md:grid-cols-2 md:gap-16 lg:gap-32 gap-20 mb-32">
                                     {posts.map((post) => (
                                         <PostPreview
                                             key={post.slug}

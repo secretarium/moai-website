@@ -16,11 +16,11 @@ const Index: React.FC = () => {
                     <title>Moai</title>
                 </Head>
                 <section id="banner">
-                    <Container>
-                        <div className="mx-auto px-8 py-8 lg:pb-30 relative flex flex-col lg:flex-row">
-                            <div className="lg:w-1/3">
+                    <div className="py-8 lg:pb-30 flex flex-col lg:flex-row">
+                        <Container className="lg:w-1/3">
+                            <div className="px-8">
                                 <PostTitle>Secure contact<br />tracing from Moai</PostTitle>
-                                <p>
+                                <p className="text-xl">
                                     Our quick and easy COVID-19 tracing system keeps your identity private and your location anonymous. Our app works on all Android and iOS devices and supports cross-border contact tracing.
                                 </p>
                                 <a href="#register" className="bg-accent-1 mt-8 py-3 px-8 mr-6 text-lg rounded-full text-white inline-block">
@@ -30,26 +30,26 @@ const Index: React.FC = () => {
                                     Discover More
                                 </a>
                             </div>
-                            <div className="lg:w-2/3 items-center lg:items-end" style={{
-                                // maxHeight: '50rem'
-                                height: '50rem'
-                            }}>
-                                <div className={styles.bannerImageContainer}>
-                                    <img alt="Chat screen" src={mockTwo} className={styles.bannerImageTwo} />
-                                    <img alt="Main screen" src={mockOne} className={styles.bannerImageOne} />
-                                </div>
+                        </Container>
+                        <div className="lg:w-2/3 items-center lg:items-end overflow-hidden md:pl-0" style={{
+                            // maxHeight: '50rem'
+                            height: '50rem'
+                        }}>
+                            <div className={styles.bannerImageContainer}>
+                                <img alt="Chat screen" src={mockTwo} className={styles.bannerImageTwo} />
+                                <img alt="Main screen" src={mockOne} className={styles.bannerImageOne} />
                             </div>
                         </div>
-                    </Container>
+                    </div>
                 </section>
                 <section id="venues" className="bg-gray-100">
                     <Container>
                         <div className="flex">
-                            <div className="w-3/4 text-left px-8 py-20">
-                                <h2 className="text-4xl pb-5">
+                            <div className="w-full md:w-3/4 text-left px-8 py-20">
+                                <h2 className="text-3xl md:text-4xl pb-5">
                                     Set up a location for contact tracing
                                 </h2>
-                                <h3 className="text-2xl text-gray-700 pb-16">
+                                <h3 className="text-2xl md:text-3xl text-gray-700 pb-16">
                                     Instantly generate an anonymous QR code to allow people to scan into your location quickly. Everything else is handled securely in the app.
                                 </h3>
                                 <p className="text-xl pb-12">
@@ -61,7 +61,7 @@ const Index: React.FC = () => {
                                     <b>It only takes a minute to set up secure track and trace for your location</b>
                                 </p>
                                 <Link href="/codes">
-                                    <a href="#more" className="bg-white mt-8 py-3 px-8 text-lg rounded-full text-accent-2 border border-accent-2 inline-block">
+                                    <a href="#more" className="bg-white mt-8 py-3 px-8 text-lg rounded-full text-center text-accent-2 border border-accent-2 inline-block">
                                         Generate free QR codes
                                     </a>
                                 </Link>
@@ -72,12 +72,12 @@ const Index: React.FC = () => {
                 <section id="guests" className="bg-white text-right">
                     <Container>
                         <div className="flex">
-                            <div className="w-1/4"></div>
-                            <div className="w-3/4 text-right px-8 py-20">
-                                <h2 className="text-4xl pb-5">
+                            <div className="w-0 md:w-1/4"></div>
+                            <div className="w-full md:w-3/4 text-right px-8 py-20">
+                                <h2 className="text-3xl md:text-4xl pb-5">
                                     Check in without providing<br /> personal information
                                 </h2>
-                                <h3 className="text-2xl text-gray-700 pb-16">
+                                <h3 className="text-2xl md:text-3xl text-gray-700 pb-16">
                                     The secure app traces risk of infection without ever knowing who you are or where you’ve been. Scan into a location using its anonymous QR code, without having to disclose any personal information. If there’s any risk you’ve been exposed to COVID-19, you’ll be notified vie the app.
                                 </h3>
                                 <p className="text-xl">
@@ -95,16 +95,16 @@ const Index: React.FC = () => {
                 <section id="register" className="bg-gray-100">
                     <Container>
                         <div className="text-center px-8 py-20">
-                            <h2 className="text-4xl pb-5">
+                            <h2 className="text-3xl md:text-4xl pb-5">
                                 Moai is almost ready.
                             </h2>
-                            <h3 className="text-2xl text-accent-2 pb-5">
+                            <h3 className="text-2xl md:text-3xl text-accent-2 pb-5">
                                 Enter your email below and we’ll let you know as soon as it’s launched.
                             </h3>
                             <form name="mc-embedded-subscribe-form" target="_blank" action="https://moaiapp.us17.list-manage.com/subscribe/post?u=1bbe9d3ad8430f833640de63c&id=284f13df99" method="post" id="mc-embedded-subscribe-form">
                                 <input id="mce-EMAIL" type="email" name="EMAIL" required className="py-2 px-5 text-xl w-full sm:w-1/2 text-center border-b border-accent-2" placeholder="Enter your email address" />
                                 <br /><br />
-                                <button id="mc-embedded-subscribe" className="bg-blue-900 mt-8 py-3 px-8 text-lg rounded-full text-white inline-block" type="submit">
+                                <button id="mc-embedded-subscribe" className="bg-blue-900 mt-8 py-3 px-8 text-lg rounded-full text-center text-white inline-block" type="submit">
                                     Register for updates
                                 </button>
                             </form>
