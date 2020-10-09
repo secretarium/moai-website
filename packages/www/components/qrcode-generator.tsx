@@ -94,12 +94,12 @@ const QRCodeGenerator: React.FC = () => {
         composition = <span>{error}</span>;
     else if (!hasShownNotice)
         composition = <>
-            <p className="text-lg leading-9 pb-10">Before we start here are some things you must know:</p>
-            <h4 className="text-2xl lg:text-3xl tracking-tighter">Each QR code should only be displayed at one location</h4>
+            <h3 className="text-2xl md:text-3xl text-gray-700 pb-10">Before we start here are some things you must know:</h3>
+            <h4 className="text-xl lg:text-2xl tracking-tighter pb-4">Each QR code should only be displayed at one location</h4>
             <p className="text-lg leading-9 pb-10">For contact tracing to be effective, it is important that each QR code you generate is only used in one place. You can print a single QR code more than once if you want to display it in more than one place at your location (for example at different entrances).</p>
-            <h4 className="text-2xl lg:text-3xl tracking-tighter">If you have more than one location, you’ll get separate QR codes</h4>
+            <h4 className="text-xl lg:text-2xl tracking-tighter pb-4">If you have more than one location, you’ll get separate QR codes</h4>
             <p className="text-lg leading-9 pb-10">You will get a separate PDF file for every location; each will contain a unique QR code. Please name your PDF files as soon as you download them so you can keep track of which QR code is displayed at which location.</p>
-            <h4 className="text-2xl lg:text-3xl tracking-tighter">In case of damage, reprint or generate a new code</h4>
+            <h4 className="text-xl lg:text-2xl tracking-tighter pb-4">In case of damage, reprint or generate a new code</h4>
             <p className="text-lg leading-9 pb-10">If your QR code gets damaged, you can reprint the original PDF. Don’t worry if you forget to save it, you can always generate a new QR code instead. Just remember, if you are using the same code in multiple places at one location, make sure to replace all of them.</p>
             <button className="bg-white mt-8 py-3 px-8 text-lg rounded-full text-center text-accent-2 border border-accent-2 inline-block" onClick={() => setHasShownNotice(true)}>I understand</button>
         </>;
@@ -121,7 +121,7 @@ const QRCodeGenerator: React.FC = () => {
     //             <button className="bnt"></button>
     //         </>;
     else if (!isConnected)
-        composition = <div>Connecting to Moai...</div>;
+        composition = <h3 className="text-2xl md:text-3xl text-gray-700 pb-10">Connecting to Moai...</h3>;
     else if (qrCode)
         composition = <>
             <h4 className="text-2xl lg:text-3xl tracking-tighter">Here is a QRCode for your {locationTypes[locationType].toLocaleLowerCase()}!</h4>
@@ -143,9 +143,9 @@ const QRCodeGenerator: React.FC = () => {
             </Link>
         </>;
     else
-        composition = <pre>
+        composition = isDev ? <pre>
             {JSON.stringify(key)}
-        </pre>;
+        </pre> : <h3 className="text-2xl md:text-3xl text-gray-700 pb-10">Creating Moai art...</h3>;
 
     return (
         <div className="text-center">

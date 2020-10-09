@@ -11,14 +11,16 @@ const HomePage: React.FC = () => {
                 <title>Moai Codes</title>
             </Head>
             <Container>
-                <section className="mt-20 mb-8 md:mb-12">
-                    <h1 className="text-6xl md:text-7xl tracking-tighter leading-tight md:pr-8 text-center">
-                        Set up Moai at your location
-                    </h1>
-                </section>
-                <section id="legal" className="mb-20">
-                    <QRCodeGenerator />
-                </section>
+                <div className="px-8">
+                    <section className="mt-20 mb-8 md:mb-12">
+                        <h1 className="text-4xl md:text-7xl tracking-tighter leading-tight md:pr-8 text-center">
+                            Set up Moai at your location
+                        </h1>
+                    </section>
+                    <section id="codes" className="mb-20">
+                        <QRCodeGenerator />
+                    </section>
+                </div>
             </Container>
         </Layout>
     );
