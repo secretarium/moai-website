@@ -15,16 +15,16 @@ const NavBar: React.FC<NavBarProps> = ({ fixedToggle }) => {
     const menuItems = (
         <div className="text-lg md:flex-grow text-left md:text-right">
             <Link href="/">
-                <a className="block mt-4 md:inline md:mt-0 mr-5 lg:mr-12 duration-200 transition-colors hover:text-accent-2 px-2 lg:px-8" onClick={() => setIsExpanded(false)}>Home</a>
+                <a className="block mt-4 md:inline md:mt-0 mr-5 lg:mr-12 duration-200 transition-colors hover:text-accent-2 px-8 md:px-2 lg:px-8" onClick={() => setIsExpanded(false)}>Home</a>
             </Link>
             <Link href="/faq">
-                <a className="block mt-4 md:inline md:mt-0 mr-5 lg:mr-12 duration-200 transition-colors hover:text-accent-2 px-2 lg:px-8" onClick={() => setIsExpanded(false)}>FAQ</a>
+                <a className="block mt-4 md:inline md:mt-0 mr-5 lg:mr-12 duration-200 transition-colors hover:text-accent-2 px-8 md:px-2 lg:px-8" onClick={() => setIsExpanded(false)}>FAQ</a>
             </Link>
             <Link href="/about">
-                <a className="block mt-4 md:inline md:mt-0 mr-5 lg:mr-12 duration-200 transition-colors hover:text-accent-2 px-2 lg:px-8" onClick={() => setIsExpanded(false)}>About us</a>
+                <a className="block mt-4 md:inline md:mt-0 mr-5 lg:mr-12 duration-200 transition-colors hover:text-accent-2 px-8 md:px-2 lg:px-8" onClick={() => setIsExpanded(false)}>About us</a>
             </Link>
             <Link href="/news">
-                <a className="block mt-4 md:inline md:mt-0 mr-5 lg:mr-12 duration-200 transition-colors hover:text-accent-2 px-2 lg:px-8" onClick={() => setIsExpanded(false)}>News</a>
+                <a className="block mt-4 md:inline md:mt-0 mr-5 lg:mr-12 duration-200 transition-colors hover:text-accent-2 px-8 md:px-2 lg:px-8" onClick={() => setIsExpanded(false)}>News</a>
             </Link>
             <Link href="/#register">
                 <a className="block mt-4 md:inline md:mt-0 mr-5 duration-200 transition-colors text-white bg-accent-1 rounded-full px-8 py-4" onClick={() => setIsExpanded(false)}>Get Moai</a>
