@@ -31,7 +31,7 @@ const Tag: React.FC<TagProps> = ({ tag, posts }) => {
                             <article className="mb-32 px-8">
                                 <Head>
                                     <title>
-                                        #{tag} | Moai Blog
+                                        #{tag} | Moai News
                                     </title>
                                 </Head>
                                 <PostTitle>#{tag}</PostTitle>

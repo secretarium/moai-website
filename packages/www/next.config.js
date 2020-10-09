@@ -17,6 +17,10 @@ const nextConfig = {
     async rewrites() {
         return [
             {
+                source: '/blog/:path*',
+                destination: '/news/:path*'
+            },
+            {
                 source: '/graphql/:path*',
                 destination: 'http://localhost:1337/graphql/:path*'
             },

@@ -22,7 +22,7 @@ const CoverImage: React.FC<CoverImageProps> = ({ title, src, slug }) => {
         <div className="-mx-5 sm:mx-0">
             {slug
                 ? (
-                    <Link as={`/blog/posts/${slug}`} href="/blog/posts/[slug]">
+                    <Link as={`/news/posts/${slug}`} href="/news/posts/[slug]">
                         <a aria-label={title}>{image}</a>
                     </Link>
                 )

@@ -24,6 +24,6 @@ export default async function preview(req: NextApiRequest, res: NextApiResponse)
 
     // Redirect to the path from the fetched post
     // We don't redirect to req.query.slug as that might lead to open redirect vulnerabilities
-    res.writeHead(307, { Location: `/blog/posts/${post.slug}` });
+    res.writeHead(307, { Location: `/news/posts/${post.slug}` });
     res.end();
 }

@@ -26,7 +26,7 @@ const PostHeader: React.FC<PostHeaderProps> = ({
             <PostTitle>{title}</PostTitle>
             <div className="block mb-5 mt-0 md:mb-12 md:-mt-5">
                 {
-                    tags.map(tag => <Link as={`/blog/tags/${tag}`} href="/blog/tags/[label]" key={tag}>
+                    tags.map(tag => <Link as={`/news/tags/${tag}`} href="/news/tags/[label]" key={tag}>
                         <a className="inline-block bg-gray-200 hover:bg-gray-300 rounded-full px-3 py-1 md:text-xl font-semibold text-gray-700 mr-2">#{tag}</a>
                     </Link>)
                 }

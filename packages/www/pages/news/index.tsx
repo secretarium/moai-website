@@ -19,7 +19,7 @@ const Index: React.FC<IndexProps> = ({ allPosts }) => {
     return (
         <Layout>
             <Head>
-                <title>Moai Blog</title>
+                <title>Moai News</title>
             </Head>
             <Container>
                 <section className="px-8">

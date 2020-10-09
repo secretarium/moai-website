@@ -34,7 +34,7 @@ const Post: React.FC<PostProps> = ({ post, preview }) => {
                             <>
                                 <Head>
                                     <title>
-                                        {post.title} | Moai Blog
+                                        {post.title} | Moai News
                                     </title>
                                     <meta property="og:image" content={post.coverImage.url} />
                                 </Head>

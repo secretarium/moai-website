@@ -33,13 +33,13 @@ const PostPreview: React.FC<PostPreviewProps> = ({
                 <CoverImage slug={slug} title={title} src={coverImage} />
             </div>
             <h3 className="text-3xl mb-3 leading-snug">
-                <Link as={`/blog/posts/${slug}`} href="/blog/posts/[slug]">
+                <Link as={`/news/posts/${slug}`} href="/news/posts/[slug]">
                     <a className="hover:underline">{title}</a>
                 </Link>
             </h3>
             <div className="mb-4 md:mb-0 text-lg pb-3">
                 {
-                    tags.map(tag => <Link as={`/blog/tags/${tag}`} href="/blog/tags/[label]" key={tag}>
+                    tags.map(tag => <Link as={`/news/tags/${tag}`} href="/news/tags/[label]" key={tag}>
                         <a className="inline-block bg-gray-200 hover:bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#{tag}</a>
                     </Link>)
                 }
