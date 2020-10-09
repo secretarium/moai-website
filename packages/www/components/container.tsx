@@ -1,7 +1,7 @@
 import React from 'react';
 
 type ContainerProps = {
-    className: string;
+    className?: string;
 };
 
 const Container: React.FC<ContainerProps> = ({ children, className }) => {

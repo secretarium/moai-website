@@ -16,9 +16,34 @@ const Index: React.FC = () => {
                     <title>Moai</title>
                 </Head>
                 <section id="banner">
-                    <div className="py-8 lg:pb-30 flex flex-col lg:flex-row">
-                        <Container className="lg:w-1/3">
-                            <div className="px-8">
+                    <Container className="p-0 md:p-5">
+                        <div className="py-8 lg:pb-30 flex flex-col lg:flex-row">
+                            <div className="px-8 lg:w-1/3">
+                                <PostTitle>Secure contact<br />tracing from Moai</PostTitle>
+                                <p className="text-xl">
+                                    Our quick and easy COVID-19 tracing system keeps your identity private and your location anonymous. Our app works on all Android and iOS devices and supports cross-border contact tracing.
+                                </p>
+                                <a href="#register" className="bg-accent-1 mt-8 py-3 px-8 mr-6 text-lg rounded-full text-white inline-block">
+                                    Register
+                                </a>
+                                <a href="#venues" className="bg-white mt-8 py-3 px-8 text-lg rounded-full text-blue-900 border border-blue-900 inline-block">
+                                    Discover More
+                                </a>
+                            </div>
+                            <div className="lg:w-2/3 items-center lg:items-end overflow-hidden md:pl-0" style={{
+                                // maxHeight: '50rem'
+                                height: '50rem'
+                            }}>
+                                <div className={styles.bannerImageContainer}>
+                                    <img alt="Chat screen" src={mockTwo} className={styles.bannerImageTwo} />
+                                    <img alt="Main screen" src={mockOne} className={styles.bannerImageOne} />
+                                </div>
+                            </div>
+                        </div>
+                    </Container>
+
+                    {/* <Container className="">
+                        <div className="px-8 lg:w-1/3">
                                 <PostTitle>Secure contact<br />tracing from Moai</PostTitle>
                                 <p className="text-xl">
                                     Our quick and easy COVID-19 tracing system keeps your identity private and your location anonymous. Our app works on all Android and iOS devices and supports cross-border contact tracing.
@@ -40,7 +65,7 @@ const Index: React.FC = () => {
                                 <img alt="Main screen" src={mockOne} className={styles.bannerImageOne} />
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </section>
                 <section id="venues" className="bg-gray-100">
                     <Container>
