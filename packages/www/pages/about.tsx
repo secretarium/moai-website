@@ -15,7 +15,7 @@ const About: React.FC = () => {
                     <section id="about" className="mb-20  px-8">
                         <PostTitle>About us</PostTitle>
                         <p className="text-lg leading-9 pb-10">
-                            Moai is a smart, secure contact tracing solution created by Secretarium, a deep-tech startup founded in 2016 with the aim of building useful technology that never compromises anyone’s privacy. Unlike the NHS contact tracing technology, our app is compatible with all iOs and Android devices. Our solution is cross-border, enabling notifications for those who may have been affected outside the UK.
+                            Moai is a smart, secure contact tracing solution created by Secretarium, a deep-tech startup founded in 2016 with the aim of building useful technology that never compromises anyone’s privacy. Unlike the NHS contact tracing technology, our app is compatible with all iOS and Android devices. Our solution is cross-border, enabling notifications for those who may have been affected outside the UK.
                             <br />
                             <br />
                             The founders are from the world of banking, but they left to pursue projects that would solve problems around handling highly sensitive data: enforcing consent, and guaranteeing privacy by design and by default.
