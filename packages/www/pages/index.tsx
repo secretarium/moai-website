@@ -46,38 +46,13 @@ const Index: React.FC = () => {
                             </div>
                         </div>
                     </Container>
-
-                    {/* <Container className="">
-                        <div className="px-8 lg:w-1/3">
-                                <PostTitle>Secure contact<br />tracing from Moai</PostTitle>
-                                <p className="text-xl">
-                                    Our quick and easy COVID-19 tracing system keeps your identity private and your location anonymous. Our app works on all Android and iOS devices and supports cross-border contact tracing.
-                                </p>
-                                <a href="#register" className="bg-accent-1 mt-8 py-3 px-8 mr-6 text-lg rounded-full text-white inline-block">
-                                    Register
-                                </a>
-                                <a href="#venues" className="bg-white mt-8 py-3 px-8 text-lg rounded-full text-blue-900 border border-blue-900 inline-block">
-                                    Discover More
-                                </a>
-                            </div>
-                        </Container>
-                        <div className="lg:w-2/3 items-center lg:items-end overflow-hidden md:pl-0" style={{
-                            // maxHeight: '50rem'
-                            height: '50rem'
-                        }}>
-                            <div className={styles.bannerImageContainer}>
-                                <img alt="Chat screen" src={mockTwo} className={styles.bannerImageTwo} />
-                                <img alt="Main screen" src={mockOne} className={styles.bannerImageOne} />
-                            </div>
-                        </div>
-                    </div> */}
                 </section>
                 <section id="venues" className="bg-gray-100">
                     <Container>
                         <div className="flex">
                             <div className="w-full md:w-3/4 text-left px-8 py-20">
                                 <h2 className="text-3xl md:text-4xl pb-5">
-                                    Keep your business compliant
+                                    Keep your business test and tracing ready
                                 </h2>
                                 <h3 className="text-2xl md:text-3xl text-gray-700 pb-16">
                                     Instantly generate an anonymous QR code to allow people to scan into your location quickly. Everything else is handled securely in the app.
@@ -85,7 +60,6 @@ const Index: React.FC = () => {
                                 <ul className="text-xl pb-12">
                                     <li>Your business information stays private</li>
                                     <li>No need to handle anybody’s personal data</li>
-                                    <li>Helps keep your location COVID-19 compliant</li>
                                 </ul>
                                 <p className="text-xl pb-12">
                                     <b>It only takes a minute to set up secure track and trace for your location</b>
