@@ -33,7 +33,7 @@ COPY --from=build /app/packages/www/public ./packages/www/public
 
 # Copy base modules
 COPY --from=base /app/node_modules ./node_modules
-COPY --from=base /app/packages/strapi/node_modules ./packages/strapi/node_modules
+# COPY --from=base /app/packages/strapi/node_modules ./packages/strapi/node_modules
 COPY --from=base /app/packages/www/node_modules ./packages/www/node_modules
 
 # Configure exposure and startup
