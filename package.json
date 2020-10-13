@@ -1,0 +1,82 @@
+{
+    "name": "@secretarium/moai-website",
+    "version": "0.0.5",
+    "private": true,
+    "description": "Privacy preserving QRCode based checking application",
+    "repository": "https://github.com/secretarium/moai-website",
+    "author": "Florian Guitton <florian@secretarium.com> (https://github.com/fguitton)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/secretarium/moai-website/issues"
+    },
+    "homepage": "https://github.com/secretarium/moai-website#readme",
+    "packman": "yarn@2.1.1",
+    "scripts": {
+        "lint": "yarn workspaces foreach run lint",
+        "lint:fix": "yarn workspaces foreach run lint:fix",
+        "dockerize": "docker build -t secretarium/moai-website .",
+        "build": "yarn workspaces foreach run build",
+        "start": "yarn workspaces foreach run start",
+        "dev:website": "yarn workspaces foreach -p -i --include @secretarium/moai-strapi --include @secretarium/moai-www run dev",
+        "test": "yarn workspaces foreach run test",
+        "test:mutation": "yarn workspaces foreach run test:mutation",
+        "preinstall": "node ./scripts/hintYarn.js",
+        "release": "release-it"
+    },
+    "keywords": [
+        "secretarium",
+        "check-in"
+    ],
+    "workspaces": {
+        "packages": [
+            "packages/*"
+        ]
+    },
+    "devDependencies": {
+        "@commitlint/config-conventional": "11.0.0",
+        "@release-it/conventional-changelog": "2.0.0",
+        "@typescript-eslint/eslint-plugin": "4.4.0",
+        "@typescript-eslint/parser": "4.4.0",
+        "commitlint": "11.0.0",
+        "eslint": "7.10.0",
+        "eslint-config-react-app": "5.2.1",
+        "eslint-config-recommended": "4.1.0",
+        "eslint-plugin-flowtype": "5.2.0",
+        "eslint-plugin-import": "2.22.1",
+        "eslint-plugin-jest": "24.1.0",
+        "eslint-plugin-jsx-a11y": "6.3.1",
+        "eslint-plugin-react": "7.21.3",
+        "eslint-plugin-react-hooks": "4.1.2",
+        "expo-yarn-workspaces": "1.2.1",
+        "husky": "4.3.0",
+        "release-it": "14.0.4"
+    },
+    "husky": {
+        "hooks": {
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+        }
+    },
+    "release-it": {
+        "git": {
+            "commitMessage": "chore: Release ${version}",
+            "tagName": "v${version}"
+        },
+        "npm": {
+            "publish": true
+        },
+        "github": {
+            "release": true
+        },
+        "plugins": {
+            "@release-it/conventional-changelog": {
+                "preset": "angular"
+            }
+        }
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "eslintConfig": {
+        "extends": "./eslint.config.js"
+    }
+}

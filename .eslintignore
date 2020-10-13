@@ -1,0 +1,12 @@
+**/assets/**
+**/build/**
+**/coverage/**
+**/lib/**
+**/node_modules/**
+**/public/**
+**/reports/**
+**/.expo/**
+**/.git/**
+**/.stryker-tmp/**
+**/.yarn/**
+!.eslintrc.js
