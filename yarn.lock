@@ -2448,6 +2448,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@secretarium/connector@npm:0.3.1":
+  version: 0.3.1
+  resolution: "@secretarium/connector@npm:0.3.1"
+  checksum: 66550d5c63e9daa8f4d1640c0dd3e3b3b4ee239fbe4dc51f4fb87b1502e55afd79873f474c4123561362fee46cc7eb38e05213770e694393ab3e693ccabcb1e7
+  languageName: node
+  linkType: hard
+
 "@secretarium/moai-strapi@workspace:packages/strapi":
   version: 0.0.0-use.local
   resolution: "@secretarium/moai-strapi@workspace:packages/strapi"
@@ -2501,6 +2508,7 @@ __metadata:
     "@fortawesome/free-brands-svg-icons": 5.15.1
     "@fortawesome/react-fontawesome": 0.1.11
     "@next/bundle-analyzer": 9.5.3
+    "@secretarium/connector": 0.3.1
     "@types/classnames": 2.2.10
     "@types/html-pdf": 2.1.2
     "@types/jest": 26.0.14
