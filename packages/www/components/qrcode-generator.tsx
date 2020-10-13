@@ -1,15 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import { Key, SCP, Constants } from '../connect/src';
+import { Key, SCP, Constants } from '@secretarium/connector';
 import QRCode from 'qrcode-svg';
 import Link from 'next/link';
 
 const scp = new SCP();
 const isDev = process.env.NODE_ENV === 'development';
 const locationTypes = [
-    'Restaurant',
-    'Taxi',
-    'Museum',
-    'Gallerie'
+    ['000', 'Other'],
+    ['001', 'Accommodation'],
+    ['002', 'Medical facility'],
+    ['003', 'Non-residential institution'],
+    ['004', 'Personal care business'],
+    ['005', 'Place of worship'],
+    ['006', 'Private event'],
+    ['007', 'Recreation and leisure'],
+    ['008', 'Restaurants, cafés, pubs and bars'],
+    ['009', 'Residential care'],
+    ['010', 'Retail shops and branches'],
+    ['011', 'Sports and fitness facilities']
 ];
 
 const QRCodeGenerator: React.FC = () => {
@@ -20,7 +28,6 @@ const QRCodeGenerator: React.FC = () => {
     const [error, setError] = useState<string>();
     const [key, setKey] = useState<any>();
     const [locationType, setLocationType] = useState<number>(-1);
-    // const [locationNumber, setLocationNumber] = useState<number>(-1);
     const [qrCode, setQrCode] = useState<string>();
 
     useEffect(() => {
@@ -35,10 +42,6 @@ const QRCodeGenerator: React.FC = () => {
                 });
             setHasInitialisedKey(true);
         }
-        //  else {
-        //     setKey(undefined);
-        //     setHasInitialisedKey(false);
-        // }
     }, [hasInitialisedKey, hasShownNotice, key]);
 
     useEffect(() => {
@@ -52,8 +55,6 @@ const QRCodeGenerator: React.FC = () => {
                     console.error(error);
                 });
             }
-            //  else
-            //     setIsConnected(false);
         }
         connectBackend();
     }, [key, locationType]);
@@ -62,15 +63,11 @@ const QRCodeGenerator: React.FC = () => {
         if (isConnected && locationType !== -1) {
 
             const query = scp.newTx('moai', 'generate-venue-id', `moai-qr-${Date.now()}`, {
-                type: locationType
-            });
-            query.onExecuted?.(() => {
-                console.log('Executed');
+                type: parseInt(locationTypes[locationType][0])
             });
             query.onResult?.((result: any) => {
                 setError(undefined);
                 setQrCode(encodeURI(result.id));
-                console.log('Result', result);
             });
             query.onError?.((error: any) => {
                 setError(isDev ? `Transaction error: ${error?.message?.toString() ?? error?.toString()}` : 'Oops, a problem occured');
@@ -108,23 +105,14 @@ const QRCodeGenerator: React.FC = () => {
             <h4 className="text-2xl lg:text-3xl tracking-tighter pb-10">What kind of location do you need a QRcode for ?</h4>
             <select className="py-3 px-8 text-lg rounded-full text-center border border-gray-700" value={locationType} onChange={(event) => setLocationType(parseInt(event.currentTarget.value))}>
                 <option key={'none'} value={-1}>Select the type of venue</option>
-                {locationTypes.map((name, index) => <option key={index} value={index}>{name}</option>)}
+                {locationTypes.map((entity, index) => <option key={index} value={index}>{entity[1]}</option>)}
             </select>
         </>;
-    // else if (locationNumber === -1)
-    //     composition = <>
-    //             <h4>How many QRcode would you need ?</h4>
-    //             <select value={locationNumber} onChange={(event) => setLocationNumber(parseInt(event.currentTarget.value))}>
-    //                 <option key={'none'} value={-1}>-</option>
-    //                 {Array(5).map((name, index) => <option key={index} value={index}>{index}</option>)}
-    //             </select>
-    //             <button className="bnt"></button>
-    //         </>;
     else if (!isConnected)
         composition = <h3 className="text-2xl md:text-3xl text-gray-700 pb-10">Connecting to Moai...</h3>;
     else if (qrCode)
         composition = <>
-            <h4 className="text-2xl lg:text-3xl tracking-tighter">Here is a QRCode for your {locationTypes[locationType].toLocaleLowerCase()}!</h4>
+            <h4 className="text-2xl lg:text-3xl tracking-tighter">Here is a QRCode for your {locationTypes[locationType][1].toLocaleLowerCase()}!</h4>
             <br />
             <br />
             <div className="inline-block" dangerouslySetInnerHTML={{
