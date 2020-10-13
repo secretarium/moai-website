@@ -5,7 +5,8 @@ module.exports = {
             colors: {
                 'accent-1': '#1ca8e1',
                 'accent-2': '#e95c59',
-                'gray-100': '#fafafa'
+                'gray-100': '#fafafa',
+                'gray-200': '#f3f3f3'
             },
             spacing: {
                 28: '4rem'
