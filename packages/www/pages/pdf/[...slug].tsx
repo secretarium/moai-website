@@ -89,8 +89,8 @@ class PDFRenderer extends React.Component {
                                 __html: new QRCode({
                                     content: `https://moai-app.com/check/${query.slug}`,
                                     padding: 4,
-                                    height: 650,
-                                    width: 650,
+                                    height: 250,
+                                    width: 250,
                                     ecl: 'H'
                                 }).svg()
                             }} style={{
