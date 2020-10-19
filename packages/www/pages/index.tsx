@@ -21,7 +21,7 @@ const Index: React.FC = () => {
                             <div className="px-12 md:px-8 lg:w-1/3">
                                 <PostTitle>Secure contact<br />tracing from Moai</PostTitle>
                                 <p className="text-xl">
-                                    A quick and easy contact tracing system that keeps identities private and locations anonymous.
+                                    A quick and easy contact tracing app that keeps identities private and locations anonymous.
                                 </p>
                                 <ul className="py-5 list-inside list-disc">
                                     <li>Compatible with NHS QR codes</li>
@@ -52,7 +52,7 @@ const Index: React.FC = () => {
                         <div className="flex">
                             <div className="w-full md:w-3/4 text-left px-8 py-20">
                                 <h2 className="text-3xl md:text-4xl pb-5">
-                                    Keep your business test and tracing ready
+                                    Keep your business test and trace ready
                                 </h2>
                                 <h3 className="text-2xl md:text-3xl text-gray-700 pb-16">
                                     Instantly generate an anonymous QR code to allow people to scan into your location quickly. Everything else is handled securely in the app.
