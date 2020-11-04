@@ -27,7 +27,7 @@ const PostPreview: React.FC<PostPreviewProps> = ({
     return (
         <div>
             <div className="mb-5" style={{
-                height: '10rem',
+                height: '20rem',
                 overflow: 'hidden'
             }}>
                 <CoverImage slug={slug} title={title} src={coverImage} />
