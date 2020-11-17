@@ -29,7 +29,7 @@
 }
 
 .fixedToggle .navBar img {
-    height: 3.5rem;
+    height: 5.5rem;
 }
 
 .logoWrapper {
@@ -44,7 +44,7 @@
     width: 2rem;
     height: 2rem;
     cursor: pointer;
-    transition: all .25s ease-in-out;
+    transition: all 0.25s ease-in-out;
 }
 
 .plate:hover {
@@ -56,7 +56,7 @@
     height: 2px;
     background: #000;
     border-radius: 1px;
-    transition: all .25s ease-in-out;
+    transition: all 0.25s ease-in-out;
 }
 
 .burger::before,
@@ -67,7 +67,7 @@
     height: 2px;
     background: #000;
     border-radius: 1px;
-    transition: all .25s ease-in-out;
+    transition: all 0.25s ease-in-out;
 }
 
 .burger::before {
@@ -84,24 +84,25 @@
 }
 
 .burger.open::before {
-  transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
-.burger.open::after  {
-  transform: rotate(-45deg);
+.burger.open::after {
+    transform: rotate(-45deg);
 }
 
-.menuPanelShadow {    
-    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.1);
+.menuPanelShadow {
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 30rem) {
-
-    .navBar, .fixedToggle .navBar {
+    .navBar,
+    .fixedToggle .navBar {
         line-height: 5.5rem;
     }
 
-    .navBar img, .fixedToggle .navBar img {
+    .navBar img,
+    .fixedToggle .navBar img {
         height: 3rem;
     }
 }
@@ -110,8 +111,13 @@
     .logoWrapper {
         width: 3rem;
     }
-    
-    .navBar img, .fixedToggle .navBar img {
+
+    .navBar img,
+    .fixedToggle .navBar img {
         max-width: unset;
     }
+}
+
+.button-background-colour {
+    background-color: #25a9ff;
 }
