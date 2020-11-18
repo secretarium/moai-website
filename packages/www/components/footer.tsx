@@ -1,5 +1,8 @@
 import React from 'react';
 import Container from './container';
+import inno from '../public/assets/images/logo_innovateuk.svg';
+import secretariumWhite from '../public/assets/images/secretariumWhite.png';
+import styles from './footer-styles.module.css';
 import Link from 'next/link';
 
 const Footer: React.FC = () => {
@@ -10,8 +13,7 @@ const Footer: React.FC = () => {
                     <div className="py-28 px-8 flex flex-col gap-10 md:flex-row items-top">
 
                         <div className=" mb-10 lg:mb-0 lg:pr-4 md:w-1/2 lg:w-1/4">
-                            <div className='text-2xl'>secretarium</div>
-                            <div className='text-xs'>YOUR SECURE CLOUD</div>
+                            <img src={inno} alt="Secretarium" className={styles.footerImages} />
                             <br></br>
                             <div className="text-sm">
                             Moai is supported by <a href="https://innovateuk.blog.gov.uk/" target="_blank" rel="noreferrer">Innovate UK</a> EU Temporary Framework funding strand. Project number 72834 in UKRI Ideas to Address COVID-19.
@@ -19,8 +21,8 @@ const Footer: React.FC = () => {
                         </div>
 
                         <div className=" mb-10 lg:mb-0 lg:pr-4  md:w-1/2 lg:w-1/4">
-                            <div className='text-2xl'>secretarium</div>
-                            <div className='text-sm text-gray-200'>YOUR SECURE CLOUD</div>
+                            <img src={secretariumWhite} alt="Secretarium" className={` inline ${styles.footerImages}` }/>
+                            <div className='text-2xl inline'>secretarium</div>
                             <br></br>
                             <div className="text-sm">
                             Moai is developed with love in London by <a href="https://secretarium.com" target="_blank" rel="noreferrer">Secretarium</a>, a deep-tech start-up specialized in confidential computing.

@@ -23,16 +23,13 @@
 }
 
 .iconList {
-    float: left;
-    height: 80px;
+    height: 10rem;
     width: auto;
-    padding-right: 10px;
 }
 
 .iconRow {
     align-content: center;
-    height: 100px;
+    height: 14rem;
     width: auto;
-    padding-bottom: 2rem;
-    padding-left: 8.5rem;
+    padding-bottom: 4rem;
 }
