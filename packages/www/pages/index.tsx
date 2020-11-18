@@ -27,27 +27,29 @@ const Index: React.FC = () => {
                 </Head>
                 <section id="banner">
                     <Container padding="p-0 md:p-5">
-                        <div className="py-8 lg:pb-30 flex flex-col lg:flex-row ">
-                            <div className="px-12 md:px-8 lg:w-1/2">
-                                <div className="font-bold">
+                        <div className="py-8 md:pb-30 flex flex-col md:flex-row ">
+                            <div className="sm:w-full px-12 md:px-8 md:w-1/2">
+                                <div className="font-bold text-black">
                                     <PostTitle>Secure contact<br />tracing from Moai</PostTitle>
                                 </div>
-                                <p className="text-xl text-pink-200 font-bold">
+                                <p className="sm:w-2/3 text-xl text-pink-200 font-bold">
                                     A quick and easy contact tracing system that keeps identities private and locations anonymous.
                                 </p>
                                 <ul className="py-5 list-inside list-disc ">
-                                    <li className="font-medium">Compatible with NHS QR codes</li>
-                                    <li className="font-medium">Works on Android and iOS devices</li>
-                                    <li className="font-medium">Supports cross-border contact tracing</li>
+                                    <li className="text-lg">Compatible with NHS QR codes</li>
+                                    <li className="text-lg">Works on Android and iOS devices</li>
+                                    <li className="text-lg">Supports cross-border contact tracing</li>
                                 </ul>
+
                                 <a href="#register" className="bg-accent-1 mt-8 py-3 px-8 mr-6 text-lg rounded-full text-white inline-block">
                                     Get Moai
                                 </a>
+                                <div className='md:hidden'><br></br></div>
                                 <a href="#venues" className="bg-white mt-8 py-3 px-8 text-lg rounded-full text-blue-900 border border-blue-900 inline-block">
                                     Learn More
                                 </a>
                             </div>
-                            <div className="lg:w-2/3 items-center lg:items-end overflow-hidden md:pl-0" style={{
+                            <div className="md:w-2/3 items-center md:items-end overflow-hidden md:pl-0" style={{
                                 // maxHeight: '50rem'
                                 height: '50rem'
                             }}>
@@ -96,9 +98,7 @@ const Index: React.FC = () => {
                                 <div className="text-base text-black ">
                                     <div className={styles.iconContainer}>
                                         <div><img alt='eye slash' src={eyeSlash} className={styles.iconList}/><br></br><p> Your business information <b>stays private</b> and <b>no need to handle anybody’s personal data</b></p></div>
-                                        <br></br>
-                                        <br></br>
-                                        <div className='mb-4'><img alt='timer' src={timer} className={styles.iconList}/><br></br><p>Helps keep your location COVID-19 compliant  It only <b>takes a minute to setup</b> secure track and trace for your location</p></div>
+                                        <div className='mt-10'><img alt='timer' src={timer} className={styles.iconList}/><br></br><p>Helps keep your location COVID-19 compliant  It only <b>takes a minute to setup</b> secure track and trace for your location</p></div>
                                     </div>
                                 </div>
                                 <Link href="/codes">
@@ -132,12 +132,12 @@ const Index: React.FC = () => {
                                 <div className="text-2xl pb-16 text-center font-thin">
                                     Scan into a location using their QR code. You won’t need to disclose any personal information and, if there’s any risk you’ve been exposed to COVID-19, you’ll be notified via the app.
                                 </div>
-                                <ul className="text-xl inline-flex ">
-                                    <li> <img alt='timer' src={coal} className={styles.iconRow}/><a><b>None</b> of your <b>personal data</b> is collected</a></li>
-                                    <li> <img alt='timer' src={glass} className={styles.iconRow}/><a>The App<b> cannot be used to track</b> you in quarantine</a></li>
-                                    <li> <img alt='timer' src={key} className={styles.iconRow}/><a><b>The government does<br></br> not have access</b> to your information</a></li>
-                                    <li> <img alt='timer' src={target} className={styles.iconRow}/><a><b>Does not use GPS or Bluetooth </b> to track you</a></li>
-                                </ul>
+                                <div className="sm:w-full text-xl text-center xl:flex justify-start">
+                                    <div className='sm:w-full  md:w-1/2 xl:w-1/4'> <img alt='timer' src={coal} className={styles.iconRow}/><p><b>None</b> of your <b>personal data</b> is collected</p></div>
+                                    <div className='sm:w-full md:w-1/2 xl:w-1/4'> <img alt='timer' src={glass} className={styles.iconRow}/><p>The App<b> cannot be used to track</b> you in quarantine</p></div>
+                                    <div className='sm:w-full  md:w-1/2 xl:w-1/4'> <img alt='timer' src={key} className={styles.iconRow}/><p><b>The government does not have access</b> to your information</p></div>
+                                    <div className='sm:w-full  md:w-1/2 xl:w-1/4'> <img alt='timer' src={target} className={styles.iconRow}/><p><b>Does not use GPS or Bluetooth </b> to track you</p></div>
+                                </div>
                             </div>
                         </div>
                     </Container>
@@ -149,15 +149,15 @@ const Index: React.FC = () => {
                                 <h2 className="text-3xl md:text-4xl pb-5 text-black font-extrabold">
                                     Keep your country safe
                                 </h2>
-                                <h3 className="md:sm text-pink-200 pb-16 font-extrabold">
+                                <h3 className="md:sm text-pink-200 pb-8 font-extrabold">
                                     Moai offers health authorities an independent data handling solution that respects people’s privacy.
                                 </h3>
-                                <div className=" pb-5 text-lg text-black ">
-                                    <div><img alt='qrCode' src={qrCode} className={styles.iconList}/><br></br><p>Compatible with <b>any health authority QR codes</b></p></div>
+                                <div className=" pb-5 text-lg text-black">
+                                    <div className='pt-10'><img alt='qrCode' src={qrCode} className={styles.iconList}/><br></br><p>Compatible with <b>any health authority QR codes</b></p></div>
                                     <br></br>
-                                    <div><img alt='people' src={people} className={styles.iconList}/><br></br><p>Able to <b>facilitate cross-border collaboration</b></p></div>
+                                    <div className='pt-10'><img alt='people' src={people} className={styles.iconList}/><br></br><p>Able to <b>facilitate cross-border collaboration</b></p></div>
                                     <br></br>
-                                    <div><img alt='audit' src={auditable} className={styles.iconList}/><br></br><p><b>Fully</b> auditable</p></div>
+                                    <div className='pt-10'><img alt='audit' src={auditable} className={styles.iconList}/><br></br><p><b>Fully</b> auditable</p></div>
                                 </div>
                             </div>
                             <div className="lg:w-2/3 items-center lg:items-end overflow-hidden md:pl-0" style={{
