@@ -132,7 +132,7 @@ const Index: React.FC = () => {
                                 <div className="text-2xl pb-16 text-center font-thin">
                                     Scan into a location using their QR code. You won’t need to disclose any personal information and, if there’s any risk you’ve been exposed to COVID-19, you’ll be notified via the app.
                                 </div>
-                                <div className="sm:w-full text-xl text-center  xl:flex ">
+                                <div className="sm:w-full text-xl text-center  lg:flex ">
                                     <div><div className='sm:w-full flex justify-center pt-16 '> <img alt='coal' src={coal} className={styles.iconRow} /></div><div className='sm:text-4xl md:block' ><b>None</b> of your <b>personal data</b> is collected</div></div>
                                     <div><div className='sm:w-full flex justify-center pt-16 '> <img alt='glass' src={glass} className={styles.iconRow}/></div><div className='sm:text-4xl md:block'>The App<b> cannot be used to track</b> you in quarantine</div></div>
                                     <div><div className='sm:w-full flex justify-center pt-16'> <img alt='key' src={key} className={styles.iconRow}/></div><div className='sm:text-4xl md:block'><b>The government does not have access</b> to your information</div></div>
