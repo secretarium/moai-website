@@ -89,10 +89,10 @@ const Index: React.FC = () => {
                     <Container>
                         <div className="md:flex">
                             <div className="w-full md:w-3/4 text-left px-8 py-20 lg:w-1/2">
-                                <h2 className="block text-3xl md:text-4xl pb-5 font-bold">
+                                <h2 className="block text-4xl md:text-4xl pb-5 font-bold">
                                     Keep your business ready
                                 </h2>
-                                <div className="w-full block md:w-3/4 text-pink-200 font-extrabold mb-4">
+                                <div className=" text-2xl w-full  block md:w-3/4 text-pink-200 font-extrabold mb-4">
                                     Instantly generate an anonymous QR code to allow people to scan into your location quickly. Everything else is handled securely in the app.
                                 </div>
                                 <div className="text-2xl md:text-lg text-black flex">
