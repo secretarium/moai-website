@@ -23,13 +23,43 @@
 }
 
 .iconList {
-    height: 10rem;
     width: auto;
+}
+@media (min-width: 320px) {
+    .iconList {
+        height: 5rem;
+    }
+}
+@media (min-width: 768px) {
+    .iconList {
+        height: 10rem;
+        padding-top: 1rem;
+    }
+}
+
+.iconListbuisnessReady {
+    width: auto;
+}
+@media (min-width: 320px) {
+    .iconListbuisnessReady {
+        height: 4rem;
+    }
+}
+@media (min-width: 768px) {
+    .iconListbuisnessReady {
+        height: 10rem;
+        padding-top: 1rem;
+    }
 }
 
 .iconRow {
     align-content: center;
-    height: 14rem;
+    height: 10rem;
     width: auto;
     padding-bottom: 4rem;
+}
+@media (min-width: 768px) {
+    .iconRow {
+        height: 14rem;
+    }
 }

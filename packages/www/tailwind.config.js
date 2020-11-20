@@ -9,6 +9,12 @@ module.exports = {
                 'gray-200': '#f3f3f3',
                 'pink-200': '#EB5C59'
             },
+            screens: {
+                sm: '320px',
+                md: '768px',
+                lg: '1024px',
+                xl: '1280px'
+            },
             spacing: {
                 28: '4rem'
             },
@@ -21,7 +27,7 @@ module.exports = {
             fontSize: {
                 // '5xl': '1.5rem',
                 // '6xl': '2.1rem',
-                '7xl': '5.5rem'
+                // '7xl': '5.5rem'
                 // '8xl': '4.25rem'
             },
             fontFamily: {
