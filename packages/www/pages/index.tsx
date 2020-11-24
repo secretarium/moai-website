@@ -94,7 +94,7 @@ const Index: React.FC = () => {
                         <div className="flex">
                             <div className="w-full  px-8 py-20">
                                 <h2 className="text-center text-5xl">
-                                    Keep your  information private
+                                    Keep your personal information private
                                 </h2>
                                 <br></br>
                                 <div className="sm:pb-8 text-base  text-center font-bold md:pb-16 text-xl">
