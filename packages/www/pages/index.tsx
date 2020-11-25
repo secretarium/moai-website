@@ -3,15 +3,15 @@ import Layout from '../components/layout';
 import Head from 'next/head';
 import styles from './index-styles.module.css';
 import heroImage from '../public/assets/images/hero_image.png';
-import eyeSlash from '../public/assets/images/eye_slash.png';
-import timer from '../public/assets/images/timer.png';
-import auditable from '../public/assets/images/audit.png';
-import coal from '../public/assets/images/coal.png';
-import people from '../public/assets/images/connectedPeople.png';
-import key from '../public/assets/images/key.png';
-import glass from '../public/assets/images/magnifyingGlass.png';
-import target from '../public/assets/images/target.png';
-import qrCode from '../public/assets/images/qrCode.png';
+import eyeSlash from '../public/assets/images/eye_slash.svg';
+import timer from '../public/assets/images/timer.svg';
+import auditable from '../public/assets/images/audit.svg';
+import coal from '../public/assets/images/coal.svg';
+import people from '../public/assets/images/connectedPeople.svg';
+import key from '../public/assets/images/key.svg';
+import glass from '../public/assets/images/magnifyingGlass.svg';
+import target from '../public/assets/images/target.svg';
+import qrCode from '../public/assets/images/qrCode.svg';
 import whitePhone from '../public/assets/images/phoneWhite.png';
 import phone from '../public/assets/images/normalPhone.png';
 import Link from 'next/link';
@@ -68,11 +68,11 @@ const Index: React.FC = () => {
                                     Instantly generate an anonymous QR code to allow people to scan into your location quickly. Everything else is handled securely in the app.
                                 </div>
                                 <div className="md:text-lg text-black flex ">
-                                    <img alt='eye slash' src={eyeSlash} className={`sm:inline  ${styles.iconListbuisnessReady} pr-4`}/><p className='sm:text-xs md:text-lg md:pt-10 xl: text-2xl'> Your business information <b>stays private</b> and <b>no need to handle anybody’s personal data</b></p>
+                                    <img alt='eye slash' src={eyeSlash} className={`sm:inline  ${styles.iconListEye} pr-4 md:pt-4`}/><p className='sm:text-xs md:text-lg md:pt-10 xl: text-2xl'> Your business information <b>stays private</b> and <b>no need to handle anybody’s personal data</b></p>
                                 </div>
                                 <br></br>
                                 <div className="text-black flex ">
-                                    <img alt='timer' src={timer} className={`sm:inline  ${styles.iconListbuisnessReady} pr-4`}/><p className='sm:text-xs md:pt-5 md:text-lg xl:pt-8 text-2xl'>Helps keep your location COVID-19 compliant  It only <b>takes a minute to setup</b> secure track and trace for your location</p>
+                                    <img alt='timer' src={timer} className={`sm:inline  ${styles.iconListTimer} pr-4`}/><p className='sm:text-xs md:pt-5 md:text-lg xl:pt-8 text-2xl'>Helps keep your location COVID-19 compliant  It only <b>takes a minute to setup</b> secure track and trace for your location</p>
                                 </div>
                                 <Link href="/codes">
                                     <a href="#more" className="block bg-white mt-8 py-3 px-8 text-lg rounded-full text-center text-accent-1 border border-accent-1 inline-block float-left">
@@ -126,7 +126,7 @@ const Index: React.FC = () => {
                                 <div className="sm:text-base pb-5 md:text-2xl text-black">
                                     <div className='pt-10 flex'><img alt='qrCode' src={qrCode} className={` ${styles.iconList} pr-6`}/><p className='md:pt-6'>Compatible with <b>any health authority QR codes</b></p></div>
                                     <div className='pt-10 flex'><img alt='people' src={people} className={`${styles.iconList} pr-6`}/><p className='md:pt-10'>Able to <b>facilitate cross-border collaboration</b></p></div>
-                                    <div className='pt-10 flex'><img alt='audit' src={auditable} className={`${styles.iconList} pr-6`}/><p className='pt-10 md:pt-20'><b>Fully</b> auditable</p></div>
+                                    <div className='pt-10 pl-2 flex'><img alt='audit' src={auditable} className={` ${styles.iconList} pr-6`}/><p className='pt-10 md:pt-20'><b>Fully</b> auditable</p></div>
                                 </div>
                             </div>
                             <div className="sm:w-full items-center lg:items-end overflow-hidden md:pl-0 lg:w-2/3 " >

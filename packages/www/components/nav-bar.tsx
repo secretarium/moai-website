@@ -1,8 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import navBarStyles from './nav-bar-styles.module.css';
-import logo from '../public/assets/images/moai_logo.png';
-import mobileLogo from '../public/assets/images/mobile_logo.png';
+import logo from '../public/assets/images/moai-logo.svg';
 import { useState } from 'react';
 
 type NavBarProps = {
