@@ -1,6 +1,6 @@
 import React from 'react';
 import Container from './container';
-import inno from '../public/assets/images/logo_innovateuk.svg';
+import inno from '../public/assets/images/logoInnovateUk.svg';
 import secretariumWhite from '../public/assets/images/secretariumWhite.png';
 import styles from './footer-styles.module.css';
 import Link from 'next/link';

@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import navBarStyles from './nav-bar-styles.module.css';
-import logo from '../public/assets/images/moai-logo.svg';
+import logo from '../public/assets/images/moaiLogo.svg';
 import { useState } from 'react';
 
 type NavBarProps = {
@@ -38,7 +38,7 @@ const NavBar: React.FC<NavBarProps> = ({ fixedToggle }) => {
                 <nav className="flex items-center justify-between flex-wrap px-8">
                     <Link href="/">
                         <a className={`flex items-center flex-shrink-0 text-white ${navBarStyles.logoWrapper}`}>
-                            <img src={logo} alt="Secretarium" />
+                            <img src={logo} alt="Secretarium"  />
                         </a>
                     </Link>
                     <div className="block md:hidden">
