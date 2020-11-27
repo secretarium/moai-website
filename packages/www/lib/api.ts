@@ -45,7 +45,7 @@ export async function getAllPostsForHome(preview: any) {
     const data = await fetchAPI(
         gql`
         query Posts($where: JSON) {
-            posts(sort: "date:desc", limit: 10, where: $where) {
+            posts(sort: "date:desc", limit: 50, where: $where) {
                 title
                 slug
                 excerpt
