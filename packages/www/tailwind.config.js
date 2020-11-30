@@ -16,6 +16,7 @@ module.exports = {
                 xl: '1280px'
             },
             spacing: {
+                18: '4.5rem',
                 28: '4rem'
             },
             letterSpacing: {

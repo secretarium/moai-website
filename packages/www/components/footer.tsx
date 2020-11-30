@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
                     <div className="py-28 px-8 flex flex-col gap-10 md:flex-row items-top">
 
                         <div className=" mb-10 lg:mb-0 lg:pr-4 md:w-1/2 lg:w-1/4">
-                            <img src={inno} alt="Secretarium" className={styles.footerImages} />
+                            <img src={inno} alt="Secretarium" className={` inline ${styles.footerImages}` } />
                             <br></br>
                             <div className="text-sm">
                             Moai is supported by <a href="https://innovateuk.blog.gov.uk/" target="_blank" rel="noreferrer">Innovate UK</a> EU Temporary Framework funding strand. Project number 72834 in UKRI Ideas to Address COVID-19.
