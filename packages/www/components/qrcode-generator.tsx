@@ -6,18 +6,25 @@ import Link from 'next/link';
 const scp = new SCP();
 const isDev = process.env.NODE_ENV === 'development';
 const locationTypes = [
-    ['000', 'Other'],
-    ['001', 'Accommodation'],
-    ['002', 'Medical facility'],
-    ['003', 'Non-residential institution'],
-    ['004', 'Personal care business'],
-    ['005', 'Place of worship'],
-    ['006', 'Private event'],
-    ['007', 'Recreation and leisure'],
-    ['008', 'Restaurants, cafés, pubs and bars'],
-    ['009', 'Residential care'],
-    ['010', 'Retail shops and branches'],
-    ['011', 'Sports and fitness facilities']
+    ['012', 'Accommodation. For example, bed and breakfasts and campsites'],
+    ['013', 'Childcare In public and private settings'],
+    ['014', 'Education Including universities'],
+    ['015', 'Events and conference space'],
+    ['016', 'Finance and professional service. For example, high street banks and real estate agencies'],
+    ['017', 'Medical facility. For example, hospitals, GP practices and veterinary clinics'],
+    ['018', 'Non-residential institution. For example, community centres, libraries, crematoria and funeral homes'],
+    ['019', 'Office location and workspace'],
+    ['020', 'Personal care. For example, hair salons and barbers, spas and beauty salons'],
+    ['021', 'Place of worship. For example, churches, synagogues, mosques, temples and meeting rooms'],
+    ['022', 'Private event'],
+    ['023', 'Recreation and leisure. For example, cinemas, theatres, museums and galleries'],
+    ['024', 'Rental / hire locations'],
+    ['025', 'Residential care. For example, care and nursing homes'],
+    ['026', 'Restaurant, cafe, pub or bar'],
+    ['027', 'Retail shops'],
+    ['028', 'Sports and fitness facilities. For example, gyms, indoor sports facilities, swimming pools'],
+    ['029', 'Transport For example, taxis and waiting rooms'],
+    ['030', 'Other']
 ];
 
 const QRCodeGenerator: React.FC = () => {
@@ -93,11 +100,11 @@ const QRCodeGenerator: React.FC = () => {
         composition = <>
             <h3 className="text-2xl md:text-3xl text-gray-700 pb-10">Before we start here are some things you must know:</h3>
             <h4 className="text-xl lg:text-2xl tracking-tighter pb-4">Each QR code should only be displayed at one location</h4>
-            <p className="text-lg leading-9 pb-10">For contact tracing to be effective, it is important that each QR code you generate is only used in one place. You can print a single QR code more than once if you want to display it in more than one place at your location (for example at different entrances).</p>
+            <p className="text-lg leading-7 pb-10">For contact tracing to be effective, it is important that each QR code you generate is only used in one place. You can print a single QR code more than once if you want to display it in more than one place at your location (for example at different entrances).</p>
             <h4 className="text-xl lg:text-2xl tracking-tighter pb-4">If you have more than one location, you’ll get separate QR codes</h4>
-            <p className="text-lg leading-9 pb-10">You will get a separate PDF file for every location; each will contain a unique QR code. Please name your PDF files as soon as you download them so you can keep track of which QR code is displayed at which location.</p>
+            <p className="text-lg leading-7 pb-10">You will get a separate PDF file for every location; each will contain a unique QR code. Please name your PDF files as soon as you download them so you can keep track of which QR code is displayed at which location.</p>
             <h4 className="text-xl lg:text-2xl tracking-tighter pb-4">In case of damage, reprint or generate a new code</h4>
-            <p className="text-lg leading-9 pb-10">If your QR code gets damaged, you can reprint the original PDF. Don’t worry if you forget to save it, you can always generate a new QR code instead. Just remember, if you are using the same code in multiple places at one location, make sure to replace all of them.</p>
+            <p className="text-lg leading-7 pb-10">If your QR code gets damaged, you can reprint the original PDF. Don’t worry if you forget to save it, you can always generate a new QR code instead. Just remember, if you are using the same code in multiple places at one location, make sure to replace all of them.</p>
             <button className="bg-white mt-8 py-3 px-8 text-lg rounded-full text-center text-accent-2 border border-accent-2 inline-block" onClick={() => setHasShownNotice(true)}>I understand</button>
         </>;
     else if (locationType === -1)
