@@ -34,6 +34,7 @@
 
 .logoWrapper {
     overflow: hidden;
+    margin-top: -1rem;
 }
 
 .plate {
@@ -95,20 +96,31 @@
     box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.1);
 }
 
-@media (max-width: 30rem) {
+@media (max-width: 768px) {
+    
+    .logoWrapper {
+        margin-top: -0.8rem;
+    }
 
+    .navBar img, .fixedToggle .navBar img {
+        height: 2.5rem;
+    }
+}
+
+@media (max-width: 30rem) {
+    
     .navBar, .fixedToggle .navBar {
         line-height: 5.5rem;
     }
 
     .navBar img, .fixedToggle .navBar img {
-        height: 3rem;
+        height: 2.5rem;
     }
 }
 
 @media (max-width: 20rem) {
     .logoWrapper {
-        width: 3rem;
+        width: 2.8rem;
     }
     
     .navBar img, .fixedToggle .navBar img {

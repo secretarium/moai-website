@@ -3,12 +3,20 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                'accent-1': '#1ca8e1',
+                'accent-1': '#25a9e1',
                 'accent-2': '#e95c59',
                 'gray-100': '#fafafa',
-                'gray-200': '#f3f3f3'
+                'gray-200': '#f3f3f3',
+                'pink-200': '#EB5C59'
+            },
+            screens: {
+                sm: '320px',
+                md: '768px',
+                lg: '1024px',
+                xl: '1280px'
             },
             spacing: {
+                18: '4.5rem',
                 28: '4rem'
             },
             letterSpacing: {
@@ -20,7 +28,7 @@ module.exports = {
             fontSize: {
                 // '5xl': '1.5rem',
                 // '6xl': '2.1rem',
-                // '7xl': '3.5rem',
+                // '7xl': '5.5rem'
                 // '8xl': '4.25rem'
             },
             fontFamily: {
