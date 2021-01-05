@@ -129,6 +129,25 @@ const Index: React.FC = () => {
                         </div>
                     </Container>
                 </section>
+                <section id="venues" className="bg-gray-100 pt-10">
+                    <Container padding="md:p-5">
+                        <div className="md:flex px-12 md:px-8">
+                            <div className="sm:px-2 w-full md:w-3/4 text-left md:py-20 lg:w-1/2">
+                                <h2 className="block text-3xl pb-10">
+                                    Measure exposure risk
+                                </h2>
+                                <div className="text-lg text-pink-200">
+                                    Moai gathers information securely via a short survey to measure factors that affect the spread of COVID-19. Users will be asked simple questions, like how busy a place was, what the ventilation was like, or if people were wearing masks.
+                                </div>
+                                <ul className="py-5 list-inside list-disc ">
+                                    <li>Alerts users of risk level</li>
+                                    <li>Enables vital research into virus propagation</li>
+                                    <li>Supports a safe reopening of the economy</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </Container>
+                </section>
                 <section id="authorities" className="bg-gray-200">
                     <Container padding="md:p-5">
                         <div className="md:flex px-12 md:px-8">
