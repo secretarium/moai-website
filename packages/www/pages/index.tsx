@@ -12,6 +12,9 @@ import key from '../public/assets/images/key.svg';
 import glass from '../public/assets/images/magnifyingGlass.svg';
 import target from '../public/assets/images/target.svg';
 import qrCode from '../public/assets/images/qrCode.svg';
+import alert from '../public/assets/images/alert.svg';
+import economy from '../public/assets/images/economy.svg';
+import research from '../public/assets/images/research.svg';
 import whitePhone from '../public/assets/images/phoneWhite.png';
 import phone from '../public/assets/images/normalPhone.png';
 import Link from 'next/link';
@@ -131,19 +134,30 @@ const Index: React.FC = () => {
                 </section>
                 <section id="venues" className="bg-gray-100 pt-10">
                     <Container padding="md:p-5">
-                        <div className="md:flex px-12 md:px-8">
-                            <div className="sm:px-2 w-full md:w-3/4 text-left md:py-20 lg:w-1/2">
-                                <h2 className="block text-3xl pb-10">
+                        <div className="flex">
+                            <div className="w-full px-8 py-20 text-center">
+                                <h2 className="text-3xl">
                                     Measure exposure risk
                                 </h2>
-                                <div className="text-lg text-pink-200">
+                                <br></br>
+                                <div className="text-xl text-pink-200 py-6 md:px-20 lg:px-48">
                                     Moai gathers information securely via a short survey to measure factors that affect the spread of COVID-19. Users will be asked simple questions, like how busy a place was, what the ventilation was like, or if people were wearing masks.
                                 </div>
-                                <ul className="py-5 list-inside list-disc ">
-                                    <li>Alerts users of risk level</li>
-                                    <li>Enables vital research into virus propagation</li>
-                                    <li>Supports a safe reopening of the economy</li>
-                                </ul>
+                                <br></br>
+                                <div className="block md:flex gap-10 text-base">
+                                    <div className='w-full md:w-1/2 lg:w-1/3 text-center'>
+                                        <img alt='research' src={research} className={styles.iconGrid} /><br />
+                                        Enables vital research into <b>virus propagation</b>
+                                    </div>
+                                    <div className='w-full md:w-1/2 lg:w-1/3'>
+                                        <img alt='alert' src={alert} className={styles.iconGrid} /><br />
+                                        Alerts users of <b>risk level</b>
+                                    </div>
+                                    <div className='w-full md:w-1/2 lg:w-1/3'>
+                                        <img alt='economy' src={economy} className={styles.iconGrid} /><br />
+                                        Supports a <b>safe reopening</b> of the economy
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </Container>
