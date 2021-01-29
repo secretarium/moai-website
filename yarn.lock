@@ -2536,6 +2536,7 @@ __metadata:
     react-sticky-el: 2.0.5
     remark: 12.0.1
     remark-html: 13.0.1
+    survey-react: 1.8.26
     tailwindcss: 1.8.12
     typescript: 4.0.3
     url-loader: 4.1.0
@@ -19718,6 +19719,16 @@ fsevents@~2.1.2:
   dependencies:
     has-flag: ^4.0.0
   checksum: 7ecd928a58a3bfd47cc06f58e1f799db3d7980e004817d55ce5fcd4de81abe91d9e3fbfa1e2a35c30c6ac59135961843dada31b5ac6da7ad60084453a54e08fb
+  languageName: node
+  linkType: hard
+
+"survey-react@npm:1.8.26":
+  version: 1.8.26
+  resolution: "survey-react@npm:1.8.26"
+  peerDependencies:
+    react: ^16.5.0
+    react-dom: ^16.5.0
+  checksum: 00ace4aec61e566b3915b10adf09e27149d8f68c345773c1ac83f5ebc93944df5f2f8f054a8453ad3215e1d1b73dc878fbe1286c7f6d11cb19e4d7140ee77ea4
   languageName: node
   linkType: hard
 

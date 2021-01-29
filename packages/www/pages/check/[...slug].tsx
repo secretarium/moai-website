@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Key, SCP, Constants } from '@secretarium/connector';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import Link from 'next/link';
 import Container from '../../components/container';
 import Layout from '../../components/layout';
 
@@ -40,7 +41,7 @@ const FAQPage: React.FC = () => {
                 });
             setHasInitialisedKey(true);
         }
-    }, [hasInitialisedKey, key])
+    }, [hasInitialisedKey, key]);
 
     useEffect(() => {
         async function connectBackend() {
@@ -55,7 +56,7 @@ const FAQPage: React.FC = () => {
             }
         }
         connectBackend();
-    }, [key])
+    }, [key]);
 
     useEffect(() => {
         if (isConnected && registerUser && slug) {
@@ -78,7 +79,7 @@ const FAQPage: React.FC = () => {
                     setIsConnected(false);
                 });
         }
-    }, [isConnected, registerUser])
+    }, [isConnected, registerUser]);
 
     useEffect(() => {
         if (isConnected && registerUser && hasRegistered) {
@@ -100,27 +101,52 @@ const FAQPage: React.FC = () => {
                     setIsConnected(false);
                 });
         }
-    }, [isConnected, registerUser, hasRegistered])
+    }, [isConnected, registerUser, hasRegistered]);
+
+    useEffect(() => {
+        if (isConnected) {
+            const query = scp.newTx('moai', 'get-venues', `moai-venues-${Date.now()}`, { cursor: 0, max: 50 });
+            query.onResult?.((result: any) => {
+                console.log(result);
+            });
+            query.onError?.((error: any) => {
+                setError(isDev ? `Transaction error: ${error?.message?.toString() ?? error?.toString()}` : 'Oops, a problem occured');
+                console.error('Error', error);
+                setIsConnected(false);
+            });
+            query.send?.()
+                .catch((error) => {
+                    setError(isDev ? `Transaction error: ${error?.message?.toString() ?? error?.toString()}` : 'Oops, a problem occured');
+                    console.error('Error', error);
+                    setIsConnected(false);
+                });
+        }
+    }, [isConnected])
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setFormValues({
             ...formValues,
-            [name]: value,
+            [name]: value
         });
     };
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setRegisterUser(true);
-    }
+    };
 
     let composition;
 
     if (error) {
         composition = <span>{error}</span>;
     } else if (hasCheckedIn) {
-        composition = <span>Successfully checked in!</span>;
+        composition = <>
+            <span>Successfully checked in!</span>
+            <br />
+            <br />
+            Would you like to answer a short survey to measure factors that affect the spread of COVID-19? If yes, <Link href={`/feedback/${slug}`}>tap here</Link>
+        </>;
     } else if (!isConnected) {
         composition = <h3 className="text-2xl md:text-3xl text-gray-700 pb-10">Connecting to Moai...</h3>;
     } else {
