@@ -15,10 +15,15 @@ const initialValues = {
     phoneNumber: ''
 };
 
+type Venue = {
+    id: string;
+    type: number;
+};
+
 const FAQPage: React.FC = () => {
 
     const router = useRouter();
-    const { slug } = router.query;
+    const { slug = '' } = router.query;
     const [isConnected, setIsConnected] = useState(false);
     const [error, setError] = useState<string>();
     const [hasInitialisedKey, setHasInitialisedKey] = useState(false);
@@ -28,7 +33,9 @@ const FAQPage: React.FC = () => {
     const [hasRegistered, setHasRegistered] = useState(false);
     const [hasCheckedIn, setHasCheckedIn] = useState(false);
     const [venueInfo, setVenueInfo] = useState('');
+    const [venueType, setVenueType] = useState<number>();
 
+    // Generate key
     useEffect(() => {
         if (!hasInitialisedKey && !key) {
             Key.createKey()
@@ -43,6 +50,7 @@ const FAQPage: React.FC = () => {
         }
     }, [hasInitialisedKey, key]);
 
+    // Connect to backend
     useEffect(() => {
         async function connectBackend() {
             if (key && scp.state === Constants.ConnectionState.closed) {
@@ -58,8 +66,9 @@ const FAQPage: React.FC = () => {
         connectBackend();
     }, [key]);
 
+    // Register user
     useEffect(() => {
-        if (isConnected && registerUser && slug) {
+        if (isConnected && registerUser) {
             setVenueInfo(slug[0]);
             const query = scp.newTx('moai', 'register-user', `moai-register-${Date.now()}`, {
                 firstname: formValues.firstName, lastname: formValues.lastName, phone: formValues.phoneNumber
@@ -81,6 +90,7 @@ const FAQPage: React.FC = () => {
         }
     }, [isConnected, registerUser]);
 
+    // Location check-in
     useEffect(() => {
         if (isConnected && registerUser && hasRegistered) {
             const query = scp.newTx('moai', 'check-in', `moai-qr-${Date.now()}`, {
@@ -103,11 +113,13 @@ const FAQPage: React.FC = () => {
         }
     }, [isConnected, registerUser, hasRegistered]);
 
+    // Get checked-in venues
     useEffect(() => {
         if (isConnected) {
             const query = scp.newTx('moai', 'get-venues', `moai-venues-${Date.now()}`, { cursor: 0, max: 50 });
             query.onResult?.((result: any) => {
-                console.log(result);
+                const type = result.venues.find((venue: Venue) => venue.id === slug[0]);
+                setVenueType(type);
             });
             query.onError?.((error: any) => {
                 setError(isDev ? `Transaction error: ${error?.message?.toString() ?? error?.toString()}` : 'Oops, a problem occured');
@@ -121,7 +133,7 @@ const FAQPage: React.FC = () => {
                     setIsConnected(false);
                 });
         }
-    }, [isConnected])
+    }, [isConnected]);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -145,7 +157,7 @@ const FAQPage: React.FC = () => {
             <span>Successfully checked in!</span>
             <br />
             <br />
-            Would you like to answer a short survey to measure factors that affect the spread of COVID-19? If yes, <Link href={`/feedback/${slug}`}>tap here</Link>
+            Would you like to answer a short survey to measure factors that affect the spread of COVID-19? If yes, <Link href={`/feedback/${venueType}/${venueInfo}`} passHref><a className="text-pink-200">tap here</a></Link>
         </>;
     } else if (!isConnected) {
         composition = <h3 className="text-2xl md:text-3xl text-gray-700 pb-10">Connecting to Moai...</h3>;
@@ -153,7 +165,7 @@ const FAQPage: React.FC = () => {
         composition = <>
             Prefer not to give your details?
             <br />
-            <b>Download the app to check in anonymously</b>
+            <p className="text-pink-200">Download the app to check in anonymously</p>
             <br />
             <br />
                 You can also check in here, but we will need a few details. Don't worry, your data is safe and will be secured and encrypted at all times.

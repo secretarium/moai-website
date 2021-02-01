@@ -1,11 +1,15 @@
 import React from 'react';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import Container from '../../components/container';
 import Layout from '../../components/layout';
 import * as Survey from 'survey-react';
 
 
 const QuestionnairePage: React.FC = () => {
+
+    const router = useRouter();
+    const { slug = '' } = router.query;
 
     const defaultThemeColors = Survey
         .StylesManager
@@ -29,6 +33,8 @@ const QuestionnairePage: React.FC = () => {
                         type: 'radiogroup',
                         name: '1',
                         title: 'What was the location type?',
+                        visible: false,
+                        visibleIf: `${slug[0]} = 18 or ${slug[0]} = 24 or ${slug[0]} = 30 or ${slug[0]} = 26 or ${slug[0]} = 28`,
                         isRequired: true,
                         choices: ['Indoor', 'Outdoor']
                     }
@@ -73,6 +79,8 @@ const QuestionnairePage: React.FC = () => {
                         type: 'radiogroup',
                         name: '5',
                         title: 'Were people using the PPE correctly? (e.g. covering both the nose and mouth)',
+                        visible: false,
+                        visibleIf: '{4} = Yes',
                         isRequired: true,
                         choices: ['Yes', 'No']
                     }
@@ -84,6 +92,8 @@ const QuestionnairePage: React.FC = () => {
                         type: 'radiogroup',
                         name: '6',
                         title: 'Was the staff wearing any form of PPE?',
+                        visible: false,
+                        visibleIf: '{4} = No',
                         isRequired: true,
                         choices: ['Yes', 'No']
                     }
@@ -117,6 +127,8 @@ const QuestionnairePage: React.FC = () => {
                         type: 'text',
                         name: '9',
                         title: 'Can you please describe it in a few words?',
+                        visible: false,
+                        visibleIf: '{8} = Yes',
                         isRequired: true,
                         placeHolder: 'Type your answer'
                     }
@@ -150,6 +162,8 @@ const QuestionnairePage: React.FC = () => {
                         type: 'radiogroup',
                         name: '12',
                         title: 'Were all the members from your support bubble?',
+                        visible: false,
+                        visibleIf: '{11} = No',
                         isRequired: true,
                         choices: ['Yes', 'No']
                     }
@@ -172,6 +186,8 @@ const QuestionnairePage: React.FC = () => {
                         type: 'radiogroup',
                         name: '14',
                         title: 'Were the surfaces cleaned after every usage?',
+                        visible: false,
+                        visibleIf: `${slug[0]} = 26 or ${slug[0]} = 28 or ${slug[0]} = 12 or ${slug[0]} = 16 or ${slug[0]} = 21 or ${slug[0]} = 29 or ${slug[0]} = 15`,
                         isRequired: true,
                         choices: ['Yes', 'No', 'Often but not after every usage']
                     }
@@ -183,6 +199,8 @@ const QuestionnairePage: React.FC = () => {
                         type: 'radiogroup',
                         name: '15',
                         title: 'Did any contact between members of the party occur during the gathering?',
+                        visible: false,
+                        visibleIf: `${slug[0]} = 15`,
                         isRequired: true,
                         choices: ['Yes', 'No']
                     }
@@ -194,6 +212,8 @@ const QuestionnairePage: React.FC = () => {
                         type: 'radiogroup',
                         name: '16',
                         title: 'Did it involve singing or physical activities?',
+                        visible: false,
+                        visibleIf: `${slug[0]} = 15`,
                         isRequired: true,
                         choices: ['Yes', 'No']
                     }
