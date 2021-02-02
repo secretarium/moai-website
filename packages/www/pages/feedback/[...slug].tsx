@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Container from '../../components/container';
@@ -11,16 +11,18 @@ const QuestionnairePage: React.FC = () => {
     const router = useRouter();
     const { slug = '' } = router.query;
 
-    const defaultThemeColors = Survey
-        .StylesManager
-        .ThemeColors['default'];
-    defaultThemeColors['$main-color'] = '#00b0ee';
-    defaultThemeColors['$main-hover-color'] = '#e95c59';
-    defaultThemeColors['$text-color'] = '#000000';
+    useEffect(() => {
+        const defaultThemeColors = Survey
+            .StylesManager
+            .ThemeColors['default'];
+        defaultThemeColors['$main-color'] = '#00b0ee';
+        defaultThemeColors['$main-hover-color'] = '#e95c59';
+        defaultThemeColors['$text-color'] = '#000000';
 
-    Survey
-        .StylesManager
-        .applyTheme();
+        Survey
+            .StylesManager
+            .applyTheme();
+    }, []);
 
     const questions = {
         completeText: 'Finish',
