@@ -6,6 +6,7 @@ import { AnimatePresence } from 'framer-motion';
 import { config, library } from '@fortawesome/fontawesome-svg-core';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import '@fortawesome/fontawesome-svg-core/styles.css';
+import 'survey-react/survey.css';
 import '../styles/index.css';
 
 config.autoAddCss = false;

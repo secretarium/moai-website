@@ -12,6 +12,9 @@ import key from '../public/assets/images/key.svg';
 import glass from '../public/assets/images/magnifyingGlass.svg';
 import target from '../public/assets/images/target.svg';
 import qrCode from '../public/assets/images/qrCode.svg';
+import alert from '../public/assets/images/alert.svg';
+import economy from '../public/assets/images/economy.svg';
+import research from '../public/assets/images/research.svg';
 import whitePhone from '../public/assets/images/phoneWhite.png';
 import phone from '../public/assets/images/normalPhone.png';
 import Link from 'next/link';
@@ -123,6 +126,36 @@ const Index: React.FC = () => {
                                     <div className='w-full md:w-1/2 lg:w-1/4'>
                                         <img alt='target' src={target} className={styles.iconGrid} /><br />
                                         <b>Does not use GPS or Bluetooth </b> to track you
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </Container>
+                </section>
+                <section id="venues" className="bg-gray-100 pt-10">
+                    <Container padding="md:p-5">
+                        <div className="flex">
+                            <div className="w-full px-8 py-20 text-center">
+                                <h2 className="text-3xl">
+                                    Measure exposure risk
+                                </h2>
+                                <br></br>
+                                <div className="text-xl text-pink-200 py-6 md:px-20 lg:px-48">
+                                    Moai gathers information securely via a short survey to measure factors that affect the spread of COVID-19. Users will be asked simple questions, like how busy a place was, what the ventilation was like, or if people were wearing masks.
+                                </div>
+                                <br></br>
+                                <div className="block md:flex gap-10 text-base">
+                                    <div className='w-full md:w-1/2 lg:w-1/3 text-center'>
+                                        <img alt='research' src={research} className={styles.iconGrid} /><br />
+                                        Enables vital research into <b>virus propagation</b>
+                                    </div>
+                                    <div className='w-full md:w-1/2 lg:w-1/3'>
+                                        <img alt='alert' src={alert} className={styles.iconGrid} /><br />
+                                        Alerts users of <b>risk level</b>
+                                    </div>
+                                    <div className='w-full md:w-1/2 lg:w-1/3'>
+                                        <img alt='economy' src={economy} className={styles.iconGrid} /><br />
+                                        Supports a <b>safe reopening</b> of the economy
                                     </div>
                                 </div>
                             </div>
