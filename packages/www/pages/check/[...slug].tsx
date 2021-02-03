@@ -111,15 +111,15 @@ const FAQPage: React.FC = () => {
                     setIsConnected(false);
                 });
         }
-    }, [isConnected, registerUser, hasRegistered]);
+    }, [isConnected, registerUser, hasRegistered, venueInfo]);
 
     // Get checked-in venues
     useEffect(() => {
-        if (isConnected) {
+        if (isConnected && hasCheckedIn) {
             const query = scp.newTx('moai', 'get-venues', `moai-venues-${Date.now()}`, { cursor: 0, max: 50 });
             query.onResult?.((result: any) => {
                 const type = result.venues.find((venue: Venue) => venue.id === slug[0]);
-                setVenueType(type);
+                setVenueType(type.type);
             });
             query.onError?.((error: any) => {
                 setError(isDev ? `Transaction error: ${error?.message?.toString() ?? error?.toString()}` : 'Oops, a problem occured');
@@ -133,7 +133,7 @@ const FAQPage: React.FC = () => {
                     setIsConnected(false);
                 });
         }
-    }, [isConnected]);
+    }, [isConnected, hasCheckedIn, slug]);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
