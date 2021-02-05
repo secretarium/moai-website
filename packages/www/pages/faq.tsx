@@ -3,8 +3,11 @@ import Layout from '../components/layout';
 import Head from 'next/head';
 import PostTitle from '../components/post-title';
 import Container from '../components/container';
+import { withTranslation } from '../i18n';
+import { TFunction } from 'next-i18next';
 
-const FAQ: React.FC = () => {
+
+const FAQ = ({ t }: { readonly t: TFunction }) => {
     return (
         <>
             <Layout>
@@ -86,4 +89,8 @@ const FAQ: React.FC = () => {
     );
 };
 
-export default FAQ;
+FAQ.getInitialProps = async () => ({
+    namespacesRequired: ['faq']
+});
+
+export default withTranslation('faq')(FAQ);

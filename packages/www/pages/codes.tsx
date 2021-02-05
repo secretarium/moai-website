@@ -3,8 +3,11 @@ import React from 'react';
 import Container from '../components/container';
 import Layout from '../components/layout';
 import QRCodeGenerator from '../components/qrcode-generator';
+import { withTranslation } from '../i18n';
+import { TFunction } from 'next-i18next';
 
-const HomePage: React.FC = () => {
+
+const HomePage = ({ t }: { readonly t: TFunction }) => {
     return (
         <Layout>
             <Head>
@@ -26,4 +29,8 @@ const HomePage: React.FC = () => {
     );
 };
 
-export default HomePage;
+HomePage.getInitialProps = async () => ({
+    namespacesRequired: ['codes']
+});
+
+export default withTranslation('codes')(HomePage);

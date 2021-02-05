@@ -3,8 +3,11 @@ import Layout from '../components/layout';
 import Head from 'next/head';
 import PostTitle from '../components/post-title';
 import Container from '../components/container';
+import { withTranslation } from '../i18n';
+import { TFunction } from 'next-i18next';
 
-const Legal: React.FC = () => {
+
+const Legal = ({ t }: { readonly t: TFunction }) => {
     return (
         <Layout>
             <Head>
@@ -51,4 +54,8 @@ const Legal: React.FC = () => {
     );
 };
 
-export default Legal;
+Legal.getInitialProps = async () => ({
+    namespacesRequired: ['legal']
+});
+
+export default withTranslation('legal')(Legal);

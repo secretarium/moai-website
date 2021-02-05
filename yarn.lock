@@ -1446,12 +1446,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:7.11.2, @babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.10.5, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.2.0, @babel/runtime@npm:^7.4.4, @babel/runtime@npm:^7.4.5, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7, @babel/runtime@npm:^7.9.2":
+"@babel/runtime@npm:7.11.2, @babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.10.5, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.2.0, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.4.4, @babel/runtime@npm:^7.4.5, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7, @babel/runtime@npm:^7.9.2":
   version: 7.11.2
   resolution: "@babel/runtime@npm:7.11.2"
   dependencies:
     regenerator-runtime: ^0.13.4
   checksum: 7a6926a9bb8e2289e58904e71cbb35f48ca38c0ac2cd521a71bdb3691f04f5092df6d6432fef66056d010f2ac0f2237eb9850316959e82dca1d2c85159d435ab
+  languageName: node
+  linkType: hard
+
+"@babel/runtime@npm:^7.12.0":
+  version: 7.12.13
+  resolution: "@babel/runtime@npm:7.12.13"
+  dependencies:
+    regenerator-runtime: ^0.13.4
+  checksum: e8d7b83d4eff7c099c1cfb7a9652a22c437097453c7bdd0d92c91eb7475e4620199a4f00fcc0db77dff434ebeecca8b71217d30b52f49876a4b9570aa86efc62
   languageName: node
   linkType: hard
 
@@ -2526,6 +2535,7 @@ __metadata:
     html-pdf: 2.2.0
     isomorphic-unfetch: 3.1.0
     next: 9.5.3
+    next-i18next: 7.0.1
     nodemailer: 6.4.13
     nprogress: 0.2.0
     postcss-preset-env: 6.7.0
@@ -2777,6 +2787,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/express-serve-static-core@npm:^4.17.18":
+  version: 4.17.18
+  resolution: "@types/express-serve-static-core@npm:4.17.18"
+  dependencies:
+    "@types/node": "*"
+    "@types/qs": "*"
+    "@types/range-parser": "*"
+  checksum: db56ab3560791963f9a74edc9f366af0e37f0a79776538aa1502a9976979af7e4236a5d2167e44e852bd4a00a7b69d3dd7085e267c2e6370e5496073ad0a7dfd
+  languageName: node
+  linkType: hard
+
 "@types/express@npm:*":
   version: 4.17.8
   resolution: "@types/express@npm:4.17.8"
@@ -2786,6 +2807,18 @@ __metadata:
     "@types/qs": "*"
     "@types/serve-static": "*"
   checksum: 39425d9fe58a7ae62a87543c221acefe74bed3dffed46e967bf02e513ff8793be894ed75fc5e7382f8b6f45eb9311642b39b090ceea129936365357a753928a3
+  languageName: node
+  linkType: hard
+
+"@types/express@npm:^4.16.1":
+  version: 4.17.11
+  resolution: "@types/express@npm:4.17.11"
+  dependencies:
+    "@types/body-parser": "*"
+    "@types/express-serve-static-core": ^4.17.18
+    "@types/qs": "*"
+    "@types/serve-static": "*"
+  checksum: 34ecd902c72d163f55a82d2b704f0538bca98d41899324664c7200e3776ebbddc22c5bd4e8ab911a10c5883ca805b824c482993293750e4eae8332a60026f071
   languageName: node
   linkType: hard
 
@@ -6427,6 +6460,13 @@ __metadata:
   version: 2.6.11
   resolution: "core-js@npm:2.6.11"
   checksum: d4f9e1cea39ddfd70cea3c46ecb2380299f6bb7dfced704545eca831411973e3eab0c714818508484ea8846855f9b587a79628b53b8c78a346ccfabeab6bdcaa
+  languageName: node
+  linkType: hard
+
+"core-js@npm:^3":
+  version: 3.8.3
+  resolution: "core-js@npm:3.8.3"
+  checksum: 65b6356db8039a232af5021653a49bd0ef657d57f43ad089f31fe738a8441b06b2592486ed353ad9afec408b093a690e65b23d5a43f6cce9c9637c694f96a07d
   languageName: node
   linkType: hard
 
@@ -10270,7 +10310,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"hoist-non-react-statics@npm:^3.0.0, hoist-non-react-statics@npm:^3.1.0, hoist-non-react-statics@npm:^3.2.1, hoist-non-react-statics@npm:^3.3.0, hoist-non-react-statics@npm:^3.3.2":
+"hoist-non-react-statics@npm:^3.0.0, hoist-non-react-statics@npm:^3.1.0, hoist-non-react-statics@npm:^3.2.0, hoist-non-react-statics@npm:^3.2.1, hoist-non-react-statics@npm:^3.3.0, hoist-non-react-statics@npm:^3.3.2":
   version: 3.3.2
   resolution: "hoist-non-react-statics@npm:3.3.2"
   dependencies:
@@ -10357,6 +10397,15 @@ fsevents@~2.1.2:
   bin:
     html-minifier: ./cli.js
   checksum: dc6cf7dbc8fef8afb12bcd90792b045bf5e8dbf3181bfa2034282a44766772f9890cf9d2e4903d369fd10dfc0c9af7c3301cb85fa2c87de3f31b4400babf57fc
+  languageName: node
+  linkType: hard
+
+"html-parse-stringify2@npm:2.0.1":
+  version: 2.0.1
+  resolution: "html-parse-stringify2@npm:2.0.1"
+  dependencies:
+    void-elements: ^2.0.1
+  checksum: 5535977f2ea919ae28d89e3a7f292ea2c8fcad54014bf76404000d54b7796b8c80eabef5e35661f0e72f62c808e2c49e6733ac0d081d9fa7263d153da13094d6
   languageName: node
   linkType: hard
 
@@ -10481,6 +10530,16 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"http-errors@npm:~1.4.0":
+  version: 1.4.0
+  resolution: "http-errors@npm:1.4.0"
+  dependencies:
+    inherits: 2.0.1
+    statuses: ">= 1.2.1 < 2"
+  checksum: f3677c8f4fa0ae1f40517ad94202ed3274ba3ddee925bc2fecd6f90ad0b243f080473986acfdeebb9010bf4bc1188ac2e44c79427f8387219082728f262cc402
+  languageName: node
+  linkType: hard
+
 "http-errors@npm:~1.6.2":
   version: 1.6.3
   resolution: "http-errors@npm:1.6.3"
@@ -10589,6 +10648,47 @@ fsevents@~2.1.2:
     debug: ^3.1.0
     sprintf-js: ^1.1.1
   checksum: 681717bb19cefbbd29bd2c40ea6ef4e74449e03c14cc3909dc271bc71a986f4ffbd2250dcd86998eb2a2c9cd15544f17ff00832de3cf1638311f101f63f192af
+  languageName: node
+  linkType: hard
+
+"i18next-browser-languagedetector@npm:^5.0.0":
+  version: 5.0.1
+  resolution: "i18next-browser-languagedetector@npm:5.0.1"
+  dependencies:
+    "@babel/runtime": ^7.5.5
+  checksum: 154e8432cffc475813094b4a85efb9c37058704944546da0e188ae52eabbbd3e3bec3334176b6aba8ec4017fa796e032ab20c7ae08fc9e73ba0a57036ea6abda
+  languageName: node
+  linkType: hard
+
+"i18next-fs-backend@npm:^1.0.7":
+  version: 1.0.8
+  resolution: "i18next-fs-backend@npm:1.0.8"
+  checksum: 905b7748b4fc0ab3f41202db0637f93f5050b4e932fd4aa790d03fb6657f56a4b62f2f81f9d117721220807243ead6ea63f60cd26b777f2907db0d71e5bae45f
+  languageName: node
+  linkType: hard
+
+"i18next-http-backend@npm:^1.0.17":
+  version: 1.1.0
+  resolution: "i18next-http-backend@npm:1.1.0"
+  dependencies:
+    node-fetch: 2.6.1
+  checksum: 3cee5ab5f4ec252e20d53358b1098c2f21f08445483aeac5e1c49e0e789ee67a8691d8baad8ce83048cac6b9225b4b058bc3b5604698f7e320706b46e14e1e7d
+  languageName: node
+  linkType: hard
+
+"i18next-http-middleware@npm:^3.0.2":
+  version: 3.1.0
+  resolution: "i18next-http-middleware@npm:3.1.0"
+  checksum: bc80bdfd25ba420d69f1146bc89d0a9bc3f3966ba234ce411ec63ed1fad0b1398eb64ac43320b9de3f21945689419503158fa83d74a672814b5c731bcada6d0c
+  languageName: node
+  linkType: hard
+
+"i18next@npm:^19.6.3":
+  version: 19.8.7
+  resolution: "i18next@npm:19.8.7"
+  dependencies:
+    "@babel/runtime": ^7.12.0
+  checksum: 22cf79f0abdcc461f76ef97fa1680194695083e57879fde2f7b9fbbc0321fda100db32959b87e310456e50a9bc2dd1d6a8443bfabe91c3a436a833db34b5dfd9
   languageName: node
   linkType: hard
 
@@ -13730,6 +13830,29 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"next-i18next@npm:7.0.1":
+  version: 7.0.1
+  resolution: "next-i18next@npm:7.0.1"
+  dependencies:
+    "@types/express": ^4.16.1
+    core-js: ^3
+    hoist-non-react-statics: ^3.2.0
+    i18next: ^19.6.3
+    i18next-browser-languagedetector: ^5.0.0
+    i18next-fs-backend: ^1.0.7
+    i18next-http-backend: ^1.0.17
+    i18next-http-middleware: ^3.0.2
+    path-match: ^1.2.4
+    prop-types: ^15.6.2
+    react-i18next: ^11.7.3
+    url: ^0.11.0
+  peerDependencies:
+    next: ">= 9.5.0"
+    react: ">= 16.8.0"
+  checksum: 749b59954e7f6e23c0378b0149f88cbab3db8653f54aa3aa5cb2487b0e46a3926bdaa74f91c0789716c7849e19d14c59c1d4e8054ddd9efe159355068e1caefc
+  languageName: node
+  linkType: hard
+
 "next-tick@npm:~1.0.0":
   version: 1.0.0
   resolution: "next-tick@npm:1.0.0"
@@ -14972,6 +15095,16 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"path-match@npm:^1.2.4":
+  version: 1.2.4
+  resolution: "path-match@npm:1.2.4"
+  dependencies:
+    http-errors: ~1.4.0
+    path-to-regexp: ^1.0.0
+  checksum: cf0947333c48d54fb80e911c5519325703938eeb96f43eed1b91cf24711b1df603982801a404a809d3ad18b4129fed649aecb5d1eafff303ad4f8cb38dd26c47
+  languageName: node
+  linkType: hard
+
 "path-parse@npm:^1.0.6":
   version: 1.0.6
   resolution: "path-parse@npm:1.0.6"
@@ -15002,7 +15135,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"path-to-regexp@npm:^1.1.1, path-to-regexp@npm:^1.7.0":
+"path-to-regexp@npm:^1.0.0, path-to-regexp@npm:^1.1.1, path-to-regexp@npm:^1.7.0":
   version: 1.8.0
   resolution: "path-to-regexp@npm:1.8.0"
   dependencies:
@@ -16413,6 +16546,19 @@ fsevents@~2.1.2:
   peerDependencies:
     react: ">=16.3.0"
   checksum: 3ee7e93e542eac281e01b3b4c8162eba49cecb09e1610efd58bc3aa00bc3bb7d69b2866098d00e8698086767d054df8d9be90237d70e503b409d3ecfeae253cb
+  languageName: node
+  linkType: hard
+
+"react-i18next@npm:^11.7.3":
+  version: 11.8.5
+  resolution: "react-i18next@npm:11.8.5"
+  dependencies:
+    "@babel/runtime": ^7.3.1
+    html-parse-stringify2: 2.0.1
+  peerDependencies:
+    i18next: ">= 19.0.0"
+    react: ">= 16.8.0"
+  checksum: 4bc4dca7e13358dc2c311d6735b369dba701791f91457c3b18eb2f09757ae36adc6c1e32cc3ce27f2cfe9089656cb2fc911f0aad8f35b3398db30d58d501fa9a
   languageName: node
   linkType: hard
 
@@ -18713,7 +18859,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"statuses@npm:>= 1.4.0 < 2, statuses@npm:>= 1.5.0 < 2, statuses@npm:^1.5.0, statuses@npm:~1.5.0":
+"statuses@npm:>= 1.2.1 < 2, statuses@npm:>= 1.4.0 < 2, statuses@npm:>= 1.5.0 < 2, statuses@npm:^1.5.0, statuses@npm:~1.5.0":
   version: 1.5.0
   resolution: "statuses@npm:1.5.0"
   checksum: 2e0b4cd7874f45fead55bcda75b35606ca2764b7cbb6b3970d7f47ed18ebb2aa28e3d47375e235f77536e0fd4b38dd7c6d8488cbd7ac6e2e623f9a34d80417b4
@@ -21029,6 +21175,13 @@ typescript@4.0.3:
   version: 1.1.2
   resolution: "vm-browserify@npm:1.1.2"
   checksum: 8eb0dfbf2d2fe4df9ecc54fed0fd13150e66c833774f92d201b40933322b9c79d9c8cdb3cf1de44fad3d254e35c4ef1884e9a04722271c1499205b3e9473a57b
+  languageName: node
+  linkType: hard
+
+"void-elements@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "void-elements@npm:2.0.1"
+  checksum: b97359a7297232c40188407bc034884a6c0ba6d859f41772576919a27341343334b92db30bffd8cc68e75fc9647e32b393d84a6e49a174db2b731f01e728397c
   languageName: node
   linkType: hard
 

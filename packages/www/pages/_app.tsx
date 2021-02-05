@@ -1,10 +1,12 @@
 import React from 'react';
-import { AppProps } from 'next/app';
+import { AppProps, AppContext } from 'next/app';
+import App from 'next/app';
 import Router from 'next/router';
 import NProgress from 'nprogress';
 import { AnimatePresence } from 'framer-motion';
 import { config, library } from '@fortawesome/fontawesome-svg-core';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { appWithTranslation } from '../i18n';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import 'survey-react/survey.css';
 import '../styles/index.css';
@@ -16,10 +18,15 @@ Router.events.on('routeChangeStart', () => NProgress.start());
 Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
 
-const App: React.FC<AppProps> = ({ Component, pageProps }) => {
+const MyApp = ({ Component, pageProps }: AppProps) => {
     return <AnimatePresence exitBeforeEnter>
         <Component {...pageProps} />
     </AnimatePresence>;
 };
 
-export default App;
+MyApp.getInitialProps = async (appContext: AppContext) => {
+    const appProps = await App.getInitialProps(appContext);
+    return { ...appProps };
+};
+
+export default appWithTranslation(MyApp);

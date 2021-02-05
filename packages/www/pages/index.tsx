@@ -20,8 +20,12 @@ import phone from '../public/assets/images/normalPhone.png';
 import Link from 'next/link';
 import PostTitle from '../components/post-title';
 import Container from '../components/container';
+import { withTranslation } from '../i18n';
+import { TFunction } from 'next-i18next';
 
-const Index: React.FC = () => {
+
+const Index = ({ t }: { readonly t: TFunction }) => {
+
     return (
         <>
             <Layout>
@@ -44,7 +48,7 @@ const Index: React.FC = () => {
                                 <div className="py-10">
                                     <div className='sm:inline-block sm:pl-20 md:pl-0 md:inline items-center'>
                                         <a href="#register" className="bg-accent-1 text-lg rounded-full text-white  mt-8 mr-6 py-3 px-8 ">
-                                            Get Moai
+                                            {t('get-moai')}
                                         </a>
                                     </div>
                                     <div className='sm:inline-block sm:pl-18 sm:pt-8 md:pl-0 pt-0 md:inline'>
@@ -217,4 +221,8 @@ const Index: React.FC = () => {
     );
 };
 
-export default Index;
+Index.getInitialProps = async () => ({
+    namespacesRequired: ['index']
+});
+
+export default withTranslation('index')(Index);

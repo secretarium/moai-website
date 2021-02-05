@@ -3,8 +3,11 @@ import Layout from '../components/layout';
 import Head from 'next/head';
 import PostTitle from '../components/post-title';
 import Container from '../components/container';
+import { withTranslation } from '../i18n';
+import { TFunction } from 'next-i18next';
 
-const About: React.FC = () => {
+
+const About = ({ t }: { readonly t: TFunction }) => {
     return (
         <>
             <Layout>
@@ -52,4 +55,8 @@ const About: React.FC = () => {
     );
 };
 
-export default About;
+About.getInitialProps = async () => ({
+    namespacesRequired: ['about']
+});
+
+export default withTranslation('about')(About);
