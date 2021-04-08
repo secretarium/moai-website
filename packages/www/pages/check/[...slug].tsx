@@ -54,7 +54,7 @@ const FAQPage: React.FC = () => {
     useEffect(() => {
         async function connectBackend() {
             if (key && scp.state === Constants.ConnectionState.closed) {
-                scp.connect('wss://ovh-uk-eri-2288-2.node.secretarium.org', key, 'rliD_CISqPEeYKbWYdwa-L-8oytAPvdGmbLC0KdvsH-OVMraarm1eo-q4fte0cWJ7-kmsq8wekFIJK0a83_yCg==').then(() => {
+                scp.connect('wss://moai.node.secretarium.org', key, 'rliD_CISqPEeYKbWYdwa-L-8oytAPvdGmbLC0KdvsH-OVMraarm1eo-q4fte0cWJ7-kmsq8wekFIJK0a83_yCg==').then(() => {
                     setIsConnected(true);
                 }).catch((error) => {
                     setError(isDev ? `Connection error: ${error?.message?.toString() ?? error?.toString()}` : 'Oops, a problem occured');

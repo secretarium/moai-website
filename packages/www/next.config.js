@@ -3,7 +3,14 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 });
 
 const nextConfig = {
-    webpack(config) {
+    webpack(config, { isServer }) {
+
+        if (!isServer) {
+            config.node = {
+                fs: 'empty'
+            };
+        }
+
         config.module.rules.push({
             test: /\.(svg|png)$/,
             issuer: {
