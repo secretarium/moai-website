@@ -1,0 +1,482 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Verify immunity certificate">
+
+    <title>Moai Application - Immunity Certificate Checker</title>
+    <link rel="icon" type="image/png" href="/android-chrome-512x512.png">
+
+    <link rel="stylesheet" href="/check-certificate/styles/bootstrap-4.3.1.min.css" />
+    <link rel="stylesheet" href="/check-certificate/styles/fontawesome-5.7.2.all.min.css" />
+    <link rel="stylesheet" href="/check-certificate/styles/style.css" />
+
+    <script src="/check-certificate/scripts/jquery-3.4.1.min.js"></script>
+    <script src="/check-certificate/scripts/popper-1.14.7.min.js"></script>
+    <script src="/check-certificate/scripts/bootstrap-4.3.1.min.js"></script>
+    <script src="/check-certificate/scripts/vue-2.6.10.min.js"></script>
+    <script src="/check-certificate/scripts/vue-router-3.0.2.min.js"></script>
+    <script src="/check-certificate/scripts/secretarium-0.1.14-gcm.js"></script>
+    <script src="/check-certificate/scripts/secretarium.iu-0.0.2.js"></script>
+    <script src="/check-certificate/scripts/blinkid-sdk-5.10.2.js"></script>
+    <script src="/check-certificate/scripts/jsqrscanner.nocache.js"></script>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <header>
+            header here
+        </header>
+        <main>
+            <transition name="page" mode="out-in">
+                <router-view></router-view>
+            </transition>
+        </main>
+        <footer>
+            <div class="container-fluid">
+                <div class="row no-gutters">
+                    <div class="col-12 col-md-4">
+                        <i class="fas fa-circle fa-small" :class="[connectionState.color]"></i>
+                        <span class="first-letter-upper-case">{{connectionState.text}}</span>
+                        <span v-if="!connectionState.connected"> - <a href="#retry"
+                                @click.prevent="connect">Connect</a></span>
+                    </div>
+                    <div class="col-12 col-md-4 order-md-2 text-md-right">
+                        <sec-notif-state :state="ns.data"></sec-notif-state>
+                    </div>
+                    <div class="col-12 col-md-4 text-center">
+                        ©{{(new Date().getFullYear())}} <a href="https://secretarium.com" target="_blank"
+                            class="link-unstyled">Secretarium</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script type="text/x-template" id="moai-check-home">
+		<section>
+            <div class="centered" style="height: 50%;">
+                <button class="btn btn-danger" type="button" @click="start">Verify Immunity Attestation</button>
+            </div>
+		</section>
+	</script>
+
+    <script type="text/x-template" id="moai-scan-id">
+		<section>
+            <h1>Step 1: Scan ID</h1>
+            <p class="message">{{message}}</p>
+            <div class="scanner" v-show="ready">
+                <video playsinline></video>
+                <canvas></canvas>
+            </div>
+		</section>
+	</script>
+
+    <script type="text/x-template" id="moai-scan-certificate">
+		<section>
+            <h1>Step 2: Scan Certificate</h1>
+            <p class="message">{{message}}</p>
+            <div class="scanner" v-show="ready"></div>
+		</section>
+	</script>
+
+    <script type="text/x-template" id="moai-check-result">
+		<section>
+            <h1>Step 3: Verify</h1>
+            <p class="message">{{message}}</p>
+            <div>
+                {{result}}
+            </div>
+		</section>
+	</script>
+
+    <script>
+        const store = {
+            user: { details: {}, certificate: {} }
+        },
+            node = {
+                endpoint: "wss://inap-uk-lon-2288-3.node.secretarium.org:443/",
+                trustedKey: "rliD_CISqPEeYKbWYdwa-L-8oytAPvdGmbLC0KdvsH-OVMraarm1eo-q4fte0cWJ7-kmsq8wekFIJK0a83_yCg=="
+            };
+
+        const Home = Vue.component('moai-check-home', {
+            template: '#moai-check-home',
+            data: () => {
+                return {
+                    store: store
+                }
+            },
+            methods: {
+                start() {
+                    Vue.set(this.store.user, "details", {});
+                    Vue.set(this.store.user, "certificate", {});
+                    router.push("/scan-id");
+                }
+            }
+        });
+
+        const ScanId = Vue.component('moai-scan-id', {
+            template: '#moai-scan-id',
+            data: () => {
+                return {
+                    store: store,
+                    ready: false, message: "", cameraFeed: null, cameraFeedback: null, drawContext: null,
+                    recognizer: null, recognizerRunner: null, videoRecognizer: null
+                }
+            },
+            mounted() {
+                this.message = "Loading passport scanner";
+
+                let $e = $(this.$el);
+                this.cameraFeed = $e.find("div.scanner video")[0];
+                this.cameraFeedback = $e.find("div.scanner canvas")[0];
+                this.drawContext = this.cameraFeedback.getContext("2d");
+
+                if (!BlinkIDSDK.isBrowserSupported()) {
+                    this.message = "Browser not supported";
+                    return;
+                }
+                if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+                    this.message = "No camera detected";
+                    return;
+                }
+
+                const blinkIdConf = new BlinkIDSDK.WasmSDKLoadSettings("sRwAAAYLbW9haWFwcC5jb222oP2IzmRPMe01aRuwDEiIu7Wpd0wHAg9zqWWbw3OyDzIsfaWMF8EbNB7CSFYuTl028m7gMXhhf5R7slAspR8VaLoJ7AXeFVf0u50o9yWhw2d8RNhze109QdyTM7O4yS8czmc8XeSSlKchm7pK22f8UaHQq6067xsgafbamSVqIr1PUjdmlLM/Y314sZLlL5RoYySdJutx1aKoTPgCZKHOs3cBBz7fSD/KnG8byjam00uveRTXDGMMYTl+JSIX+0J66guARqa0xTBeMPzjdKw8S3ksbBQE5WJ751EL+rpQMRqEwlSC88dHde540f+shwIpiQorEZA=");
+                blinkIdConf.allowHelloMessage = true;
+                blinkIdConf.engineLocation = "https://moaiapp.com/check-certificate/resources/";
+                blinkIdConf.loadProgressCallback = (x) => { this.message = `Loading passport scanner ... ${x.toFixed(2)}%`; }
+                BlinkIDSDK.loadWasmModule(blinkIdConf).then(
+                    l => { this.startScanning(l) },
+                    e => { this.message = "Failure to load the passport scanner"; });
+            },
+            beforeDestroy() {
+                if (this.videoRecognizer)
+                    this.videoRecognizer.releaseVideoFeed();
+                if (this.recognizerRunner)
+                    this.recognizerRunner.delete();
+                if (this.recognizer)
+                    this.recognizer.delete();
+            },
+            methods: {
+                async startScanning(lib) {
+                    this.message = "Configuring ...";
+                    this.recognizer = await BlinkIDSDK.createBlinkIdRecognizer(lib);
+                    const callbacks = { onQuadDetection: (quad) => this.drawQuad(quad) };
+                    this.recognizerRunner = await BlinkIDSDK.createRecognizerRunner(lib, [this.recognizer], false, callbacks);
+
+                    this.message = "Ready to scan!";
+                    this.ready = true;
+
+                    try {
+                        this.videoRecognizer = await BlinkIDSDK.VideoRecognizer.createVideoRecognizerFromCameraStream(
+                            this.cameraFeed, this.recognizerRunner);
+                    }
+                    catch (e) {
+                        this.message = "Unable to access the camera feed";
+                    }
+
+                    const rec = await this.videoRecognizer.recognize();
+                    if (rec !== BlinkIDSDK.RecognizerResultState.Empty) {
+                        const res = await this.recognizer.getResult();
+                        this.onSuccess(res);
+                    }
+                    else {
+                        this.message = "Could not detect a passport";
+                    }
+                },
+                drawQuad(quad) {
+                    let cameraFeed = this.cameraFeed;
+                    let cameraFeedback = this.cameraFeedback;
+                    let drawContext = this.drawContext;
+
+                    // Clear canvas
+                    cameraFeedback.width = cameraFeedback.clientWidth;
+                    cameraFeedback.height = cameraFeedback.clientHeight;
+                    drawContext.clearRect(0, 0, cameraFeedback.width, cameraFeedback.height);
+
+                    // Redraw zone
+                    let color = quad.detectionStatus === 0 ? "#FF0000FF" : quad.detectionStatus === 1 ? "#00FF00FF" : "#FFFF00FF";
+                    drawContext.fillStyle = color;
+                    drawContext.strokeStyle = color;
+                    drawContext.lineWidth = 5;
+                    const canvasAR = cameraFeedback.width / cameraFeedback.height;
+                    const videoAR = cameraFeed.videoWidth / cameraFeed.videoHeight;
+                    let xOffset = 0, yOffset = 0, scaledVideoHeight = 0, scaledVideoWidth = 0;
+                    if (canvasAR > videoAR) {
+                        scaledVideoHeight = cameraFeedback.height;
+                        scaledVideoWidth = videoAR * scaledVideoHeight;
+                        xOffset = (cameraFeedback.width - scaledVideoWidth) / 2.0;
+                    }
+                    else {
+                        scaledVideoWidth = cameraFeedback.width;
+                        scaledVideoHeight = scaledVideoWidth / videoAR;
+                        yOffset = (cameraFeedback.height - scaledVideoHeight) / 2.0;
+                    }
+                    drawContext.translate(xOffset, yOffset);
+                    drawContext.scale(scaledVideoWidth / cameraFeed.videoWidth, scaledVideoHeight / cameraFeed.videoHeight);
+                    drawContext.transform
+                        (
+                            quad.transformMatrix[0], quad.transformMatrix[3], quad.transformMatrix[1],
+                            quad.transformMatrix[4], quad.transformMatrix[2], quad.transformMatrix[5]
+                        );
+                    drawContext.beginPath();
+                    drawContext.moveTo(quad.topLeft.x, quad.topLeft.y);
+                    drawContext.lineTo(quad.topRight.x, quad.topRight.y);
+                    drawContext.lineTo(quad.bottomRight.x, quad.bottomRight.y);
+                    drawContext.lineTo(quad.bottomLeft.x, quad.bottomLeft.y);
+                    drawContext.closePath();
+                    drawContext.stroke();
+
+                    // Update msg
+                    switch (quad.detectionStatus) {
+                        case BlinkIDSDK.DetectionStatus.Fail:
+                            this.message = "Scanning...";
+                            break;
+                        case BlinkIDSDK.DetectionStatus.Success:
+                        case BlinkIDSDK.DetectionStatus.FallbackSuccess:
+                            this.message = "Detection successful";
+                            break;
+                        case BlinkIDSDK.DetectionStatus.CameraAtAngle:
+                            this.message = "Adjust the angle";
+                            break;
+                        case BlinkIDSDK.DetectionStatus.CameraTooHigh:
+                            this.message = "Move document closer";
+                            break;
+                        case BlinkIDSDK.DetectionStatus.CameraTooNear:
+                        case BlinkIDSDK.DetectionStatus.DocumentTooCloseToEdge:
+                        case BlinkIDSDK.DetectionStatus.Partial:
+                            this.message = "Move document farther";
+                            break;
+                        default:
+                            console.warn("Unhandled detection status!", displayable.detectionStatus);
+                    }
+                },
+                async onSuccess(results) {
+                    try {
+                        const details = {
+                            firstName: results.firstName || results.mrz.secondaryID,
+                            lastName: results.lastName || results.mrz.primaryID,
+                            nationality: results.nationality || results.mrz.nationalityName,
+                            dateOfBirth: {
+                                year: results.dateOfBirth.year || results.mrz.dateOfBirth.year,
+                                month: results.dateOfBirth.month || results.mrz.dateOfBirth.month,
+                                day: results.dateOfBirth.day || results.mrz.dateOfBirth.day
+                            },
+                            dateOfExpiry: {
+                                year: results.dateOfExpiry.year || results.mrz.dateOfExpiry.year,
+                                month: results.dateOfExpiry.month || results.mrz.dateOfExpiry.month,
+                                day: results.dateOfExpiry.day || results.mrz.dateOfExpiry.day
+                            },
+                            docNumber: results.documentNumber || results.mrz.documentNumber
+                        };
+                        const digest = await sec.utils.hashBase64(JSON.stringify(details));
+                        details.digest = digest;
+                        Vue.set(this.store.user, "details", details);
+                        router.push("/scan-certificate");
+                    } catch (e) {
+                        this.message = "Error while parsing the document: " + e;
+                    }
+                }
+            }
+        });
+
+        const ScanCertificate = Vue.component('moai-scan-certificate', {
+            template: '#moai-scan-certificate',
+            data: () => {
+                return {
+                    store: store,
+                    message: "", ready: false, elt: null, scanner: null
+                }
+            },
+            mounted() {
+                this.message = "Loading certificate scanner";
+                this.elt = $(this.$el).find("div.scanner")[0];
+                this.scanner = new JsQRScanner(x => { this.onSuccess(x); });
+                this.scanner.setSnapImageMaxSize(300);
+                this.scanner.appendTo(this.elt);
+                this.ready = true;
+                this.message = "Ready to scan!";
+                this.scanQrCode();
+            },
+            beforeDestroy() {
+                if (this.scanner) {
+                    this.scanner.stopScanning();
+                    this.scanner.removeFrom(this.elt);
+                }
+            },
+            methods: {
+                scanQrCode() {
+                    this.message = "Scanning ...";
+                },
+                onSuccess(results) {
+                    this.message = "Parsing ...";
+                    try {
+                        var moaiCert = JSON.parse(results);
+                        if (!moaiCert.userDetailsDigest || moaiCert.userDetailsDigest.length != 44)
+                            throw "missing 'userDetailsDigest' field";
+                        if (!moaiCert.expirydate)
+                            throw "missing 'expirydate' field";
+                        if (!moaiCert.verificationToken)
+                            throw "missing 'verificationToken' field";
+                        Vue.set(this.store.user, "certificate", moaiCert);
+                        router.push("/check-result");
+                    } catch (e) {
+                        this.message = "Invalid QR Code: " + e;
+                        setTimeout(() => { this.scanQrCode(); }, 2000);
+                    }
+                }
+            }
+        });
+
+        const CheckResult = Vue.component('moai-check-result', {
+            template: '#moai-check-result',
+            data: () => {
+                return {
+                    store: store,
+                    message: "", result: ""
+                }
+            },
+            mounted() {
+                this.message = "Verifying ...";
+                let res = this.verifyOffline();
+                if (res === true)
+                    this.result = "Certificate is VALID";
+                else
+                    this.result = res;
+            },
+            methods: {
+                verify(certificate) {
+                    if (!certificate || !this.store.user.details)
+                        return "Invalid user ID or certificate";
+                    if (!certificate.userDetailsDigest || !this.store.user.details.digest)
+                        return "The certificate does not match the user ID";
+                    if (certificate.userDetailsDigest != this.store.user.details.digest)
+                        return "The certificate does not match the user ID";
+                    let expiry = new Date(certificate.expirydate / 1000000);
+                    if (expiry < new Date())
+                        return "The certificate has expired";
+                    return true;
+                },
+                verifyOffline() {
+                    return this.verify(this.store.user.certificate);
+                },
+                async verifyWithMoai() {
+                    this.message = "Connecting ...";
+                    return new Promise((resolve, reject) => {
+                        this.$root.connect()
+                            .then(() => {
+                                try {
+                                    this.$root.connection
+                                        .newQuery("moai", "get-immunity-certificate", "r", { verificationToken: token })
+                                        .onError(x => { this.ns.failed(x, true); })
+                                        .onResult(x => {
+                                            this.ns.executed("Success", true);
+                                            if (this.verify(x))
+                                                resolve(true);
+                                            else
+                                                reject("Invalid certificate");
+                                        })
+                                        .send();
+                                } catch (x) {
+                                    this.ns.failed(x, true);
+                                    reject(x);
+                                }
+                            })
+                            .catch(e => {
+                                this.message = "MOAI is not available at the momemnt, please retry later";
+                                reject(e);
+                            });
+                    });
+                }
+            }
+        });
+
+        const router = new VueRouter({
+            mode: 'history',
+            base: 'check-certificate',
+            routes: [
+                { path: '/', component: Home },
+                { path: '/scan-id', component: ScanId },
+                { path: '/scan-certificate', component: ScanCertificate },
+                { path: '/check-result', component: CheckResult },
+                { path: '*', redirect: '/' },
+            ]
+        });
+
+        const App = new Vue({
+            router,
+            data: () => {
+                return {
+                    store: store, key: null,
+                    connection: null, connecting: false, certificate: null,
+                    ns: new sec.notifState()
+                }
+            },
+            computed: {
+                connectionState() {
+                    let c = this.connection, s = c && c.security.state;
+                    return {
+                        text: c ? sec.states.security[s] : "Offline",
+                        connected: c && s == 1,
+                        color: c ? ["text-warning", "text-success", "text-danger"][s] : "text-secondary"
+                    };
+                }
+
+            },
+            methods: {
+                async connect() {
+                    this.ns.processing("Connecting", true);
+
+                    if (!this.key) {
+                        try {
+                            this.ns.processing("Creating connection key", true);
+                            this.key = await new sec.keysManager().createKey("Ephemeral Key");
+                            this.ns.executed("Success", true).hide(1000);
+                        } catch (err) {
+                            this.ns.failed(err || "Error while creating connection key", true);
+                            return;
+                        }
+                    }
+
+                    if (!this.connection)
+                        this.connection = new sec.scp();
+
+                    return new Promise((resolve, reject) => {
+                        if (this.connection.socket.state < 2 && this.connection.security.state < 2) {
+                            resolve(); // already connected
+                            this.ns.executed("Connected !", true).hide(2000);
+                            return;
+                        }
+                        this.connecting = true;
+                        this.connection.reset()
+                            .on("statechange", x => {
+                                if (x == 2) // connection dropped
+                                    this.connecting = false;
+                            })
+                            .connect(node.endpoint, this.key.cryptoKey, Uint8Array.secFromBase64(node.trustedKey, true), "pair1", true)
+                            .then(() => {
+                                this.connecting = false;
+                                this.ns.executed("Connected !", true).hide(2000);
+                                resolve();
+                            })
+                            .catch(e => {
+                                this.connecting = false;
+                                this.ns.failed(e || "Unable to connect", true);
+                                reject(e);
+                            });
+                    });
+                },
+                disconnect() {
+                    if (this.connection) {
+                        this.connection.close();
+                        this.connection = null;
+                    }
+                }
+            }
+        }).$mount('#app');
+    </script>
+</body>
+
+</html>
