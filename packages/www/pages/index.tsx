@@ -193,25 +193,6 @@ const Index: React.FC = () => {
                         </div>
                     </Container>
                 </section>
-                <section id="register" className="bg-gray-100">
-                    <Container>
-                        <div className="text-center px-8 py-20">
-                            <h2 className="text-3xl pb-5">
-                                Moai is almost ready!
-                            </h2>
-                            <div className="text-accent-2 pb-5">
-                                Enter your email below and we’ll let you know as soon as it’s launched.
-                            </div>
-                            <form name="mc-embedded-subscribe-form" target="_blank" action="https://moaiapp.us17.list-manage.com/subscribe/post?u=1bbe9d3ad8430f833640de63c&id=284f13df99" method="post" id="mc-embedded-subscribe-form">
-                                <input id="mce-EMAIL" type="email" name="EMAIL" required className="py-2 px-5 text-xl w-full sm:w-1/2 text-center bg-gray-200" placeholder="Email address" />
-                                <br /><br />
-                                <button id="mc-embedded-subscribe" className="bg-accent-1 mt-8 py-3 px-8 text-lg rounded-full text-center text-white inline-block" type="submit">
-                                    Register for updates
-                                </button>
-                            </form>
-                        </div>
-                    </Container>
-                </section>
             </Layout>
         </>
     );
