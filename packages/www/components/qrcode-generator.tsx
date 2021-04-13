@@ -6,25 +6,25 @@ import Link from 'next/link';
 const scp = new SCP();
 const isDev = process.env.NODE_ENV === 'development';
 const locationTypes = [
-    ['012', 'Accommodation. For example, bed and breakfasts and campsites'],
-    ['013', 'Childcare In public and private settings'],
-    ['014', 'Education Including universities'],
-    ['015', 'Events and conference space'],
-    ['016', 'Finance and professional service. For example, high street banks and real estate agencies'],
-    ['017', 'Medical facility. For example, hospitals, GP practices and veterinary clinics'],
-    ['018', 'Non-residential institution. For example, community centres, libraries, crematoria and funeral homes'],
-    ['019', 'Office location and workspace'],
-    ['020', 'Personal care. For example, hair salons and barbers, spas and beauty salons'],
-    ['021', 'Place of worship. For example, churches, synagogues, mosques, temples and meeting rooms'],
-    ['022', 'Private event'],
-    ['023', 'Recreation and leisure. For example, cinemas, theatres, museums and galleries'],
-    ['024', 'Rental / hire locations'],
-    ['025', 'Residential care. For example, care and nursing homes'],
-    ['026', 'Restaurant, cafe, pub or bar'],
-    ['027', 'Retail shops'],
-    ['028', 'Sports and fitness facilities. For example, gyms, indoor sports facilities, swimming pools'],
-    ['029', 'Transport For example, taxis and waiting rooms'],
-    ['030', 'Other']
+    ['0', 'Accommodation. For example, bed and breakfasts and campsites'],
+    ['1', 'Childcare In public and private settings'],
+    ['2', 'Education Including universities'],
+    ['3', 'Events and conference space'],
+    ['4', 'Finance and professional service. For example, high street banks and real estate agencies'],
+    ['5', 'Medical facility. For example, hospitals, GP practices and veterinary clinics'],
+    ['6', 'Non-residential institution. For example, community centres, libraries, crematoria and funeral homes'],
+    ['7', 'Office location and workspace'],
+    ['8', 'Personal care. For example, hair salons and barbers, spas and beauty salons'],
+    ['9', 'Place of worship. For example, churches, synagogues, mosques, temples and meeting rooms'],
+    ['10', 'Private event'],
+    ['11', 'Recreation and leisure. For example, cinemas, theatres, museums and galleries'],
+    ['12', 'Rental / hire locations'],
+    ['13', 'Residential care. For example, care and nursing homes'],
+    ['14', 'Restaurant, cafe, pub or bar'],
+    ['15', 'Retail shops'],
+    ['16', 'Sports and fitness facilities. For example, gyms, indoor sports facilities, swimming pools'],
+    ['17', 'Transport For example, taxis and waiting rooms'],
+    ['18', 'Other']
 ];
 
 const QRCodeGenerator: React.FC = () => {
