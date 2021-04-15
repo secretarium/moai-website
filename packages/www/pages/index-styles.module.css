@@ -35,13 +35,20 @@
     display: inline-block;
     position: relative;
     height: auto;
-    width: 5rem;
+    width: 3rem;
     margin-right: 2rem;
 }
 
 .iconGrid {
     margin-right: 0;
     margin-bottom: 3rem;
+}
+
+.storeIcons {
+    display: inline-block;
+    position: relative;
+    height: auto;
+    width: 15rem;
 }
 
 /* .iconList {
