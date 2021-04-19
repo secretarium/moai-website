@@ -2,18 +2,14 @@ import React from 'react';
 import Layout from '../components/layout';
 import Head from 'next/head';
 import styles from './index-styles.module.css';
-import heroImage from '../public/assets/images/heroImage.png';
+import heroImage from '../public/assets/images/homepage.png';
 import eyeSlash from '../public/assets/images/eyeSlash.svg';
 import timer from '../public/assets/images/timer.svg';
-import auditable from '../public/assets/images/audit.svg';
-import people from '../public/assets/images/connectedPeople.svg';
-import qrCode from '../public/assets/images/qrCode.svg';
 import alert from '../public/assets/images/alert.svg';
 import economy from '../public/assets/images/economy.svg';
 import research from '../public/assets/images/research.svg';
 import cross from '../public/assets/images/cross.svg';
 import checkmark from '../public/assets/images/checkmark.svg';
-import whitePhone from '../public/assets/images/phoneWhite.png';
 import scanQrCode from '../public/assets/images/scanQrCode.png';
 import verified from '../public/assets/images/verified.png';
 import googlePlay from '../public/assets/images/googlePlay.svg';
@@ -60,7 +56,7 @@ const Index: React.FC = () => {
                                     <div className='sm:inline-block sm:pt-12 md:pl-0 pt-0 md:float-left'>
                                         <a href="https://moaiapp.com/check-certificate/scan-certificate" className="sm:text-sm bg-accent  text-lg rounded-full text-accent-1 border border-accent-1  mt-2  py-3 px-8" target="_blank" rel="noopener noreferrer">
                                                 Verify Immunity Certificate
-                                        </a>    
+                                        </a>
                                     </div>
                                 </div>
                             </div>
