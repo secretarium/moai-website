@@ -35,8 +35,20 @@
     display: inline-block;
     position: relative;
     height: auto;
-    width: 3rem;
+    width: 4rem;
     margin-right: 2rem;
+}
+
+.phoneScreens {
+    display: inline-block;
+    position: relative;
+    width: 60%;
+    margin-bottom: 3rem;
+}
+
+.video {
+    align-items: center;
+    justify-content: center;
 }
 
 .iconGrid {
