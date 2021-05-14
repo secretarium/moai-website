@@ -1,6 +1,6 @@
 {
     "name": "@secretarium/moai-website",
-    "version": "0.0.14",
+    "version": "0.0.15",
     "private": true,
     "description": "Privacy preserving QRCode based checking application",
     "repository": "https://github.com/secretarium/moai-website",
